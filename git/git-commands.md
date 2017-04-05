@@ -13,7 +13,6 @@ git stash list // stash된 list 확인
 git stash show stash이름
 
 git stash drop
-
 ```
 
 ## 반영한 사람(범인) 찾기
@@ -32,7 +31,7 @@ git blame -L 3080,3090 test.js
 git branch -alvv
 ```
 
-##git patch
+## git patch
 
 ```
 git diff --no-prefix > patchfile # 패치파일 생성
@@ -52,7 +51,9 @@ patch -p1 < patchfile # 패치 적용
 
 ## git lg alias
 
+```
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
 
 git config --global --edit으로 들어가서 직접 수정해도 된다.
 
