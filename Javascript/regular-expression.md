@@ -7,7 +7,7 @@
 
 출처: <http://stackoverflow.com/questions/28127794/difference-between-split-s-and-split> 
 
-===
+=====
 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D
 를 참고해보면 comp.trim().split(/\s+/) 는 
