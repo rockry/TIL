@@ -3,7 +3,7 @@
 ```javascript
 	function base64ToArrayBuffer(base64_string) {
 		return Uint8Array.from(atob(base64_string), function(c) {
-				c.charCodeAt(0);
+				return c.charCodeAt(0);
 			});
 	}
     
