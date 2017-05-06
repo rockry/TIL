@@ -20,7 +20,7 @@ ionic2는 angular2, typescript 기반으로 작성된다.
 아래 오라클 홈페이지에 가서 Java SE(Standard Edition)의 JDK(Java Development Kit)을 다운받아 설치한다.
 
 (설치 후 JAVA_HOME 환경변수 확인)  
->(JAVA_HOME이 없을 경우) : Start 메뉴 > Computer > System Properties > Advanced System Properties를 선택합니다. 그런 다음 Advanced 탭 > Environment Variables를 열고 JDK 폴더(예: C:\Program Files\Java\jdk1.8.0_77)를 가리키는 새 시스템 변수 JAVA_HOME을 추가합니다.
+> (JAVA_HOME이 없을 경우) : Start 메뉴 > Computer > System Properties > Advanced System Properties를 선택합니다. 그런 다음 Advanced 탭 > Environment Variables를 열고 JDK 폴더(예: C:\Program Files\Java\jdk1.8.0_77)를 가리키는 새 시스템 변수 JAVA_HOME을 추가합니다.
 
 [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -64,6 +64,7 @@ MAC에서 ios 빌드를 통한 검증이 필요하다면 아래 2가지 module�
 > ionic info로 설치된 ionic 모듈들을 확인한다.<br>
 
 ```
+>ionic info
 Cordova CLI: 6.5.0  
 Ionic Framework Version: 3.1.1  
 Ionic CLI Version: 2.2.3  
@@ -103,8 +104,9 @@ npm으로 Ionic을 설치했다면 이제 모든 준비가 완료되었다. 정�
     ionic emulate android
 
 >지원 가능한 platform 확인
+
 ```
-> ionic platform
+>ionic platform
 Installed platforms:
   android 6.1.2
   ios 4.3.1
@@ -146,4 +148,3 @@ Available platforms:
 |./package.json | npm 의존성 관리 파일.|
 |./tsconfig.json | TypeScript 컴파일러를 위한 설정 파일.|
 |./config.xml | Cordova에서 app package를 생성할 때 사용하는 설정 정보 파일.|
-
