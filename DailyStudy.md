@@ -2,9 +2,12 @@
 
 ## 2017-09-04:
 
-### Udemy 코딩인터뷰 완벽준비 : 섹션5
+### Udemy 코딩인터뷰 완벽준비 : 섹션5 (반복시청필요)
+
     - 5-1 : DiceCount
     - 5-2 : Painter
+    - 5-3 : BitCombinations
+    - 5-4 : Permutation
 
 ## 2017-09-03:
 
