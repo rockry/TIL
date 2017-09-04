@@ -31,6 +31,10 @@
 
 # Android
 
+## 2017-09-05
+
+- [Enum을 피해야되는 이유](https://brunch.co.kr/@oemilk/94)
+
 ## 2017-09-04:
 
 - JSON Parsing 
