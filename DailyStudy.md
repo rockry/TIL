@@ -28,6 +28,12 @@
 
 # Android
 
+## 2017-09-04:
+
+### BroadcastReceiver 동적 사용법
+
+### ListView 기본 사용법
+
 # Programming etc
 
 # Excercise
