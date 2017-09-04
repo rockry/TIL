@@ -2,7 +2,7 @@
 
 ## 2017-09-05
 
-- Udemy 코딩인터뷰 완벽준비 : 5-4 Permutation 
+- Udemy 코딩인터뷰 완벽준비 : 5-4 Permutation 복습
 
 ## 2017-09-04:
 
