@@ -55,9 +55,25 @@ H3 ### , H4 #### , H5 ##### , H6 ######
 
 \[링크명](url)
 
+### <강조>
+```
+*single asterisks*
+_single underscores_
+**double asterisks**
+__double underscores__
+++underline++
+~~cancelline~~
+```
+
+### <이미지>
+```
+![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg "Optional title")
+```
 
 #### 참고
 https://teragoon.wordpress.com/2012/04/04/
 
 https://help.github.com/articles/basic-writing-and-formatting-syntax/
 
+https://gist.github.com/ihoneymon/652be052a0727ad59601
