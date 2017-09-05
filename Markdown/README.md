@@ -64,6 +64,17 @@ __double underscores__
 ++underline++
 ~~cancelline~~
 ```
+*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__
+
+++underline++
+
+~~cancelline~~
 
 ### <이미지>
 ```
