@@ -37,6 +37,7 @@
 
 ## 2017-09-05
 
+- RelativeLayout_Tip
 - Network Processing In Android
 - [Enum을 피해야되는 이유](https://brunch.co.kr/@oemilk/94)
 
