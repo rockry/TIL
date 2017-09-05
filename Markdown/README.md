@@ -45,11 +45,11 @@ H3 ### , H4 #### , H5 ##### , H6 ######
 
 무조건 빈줄을 하나 넣어줘 준 다음 공백 4개(”    “) 로 시작하면 됩니다.
 
-또는 “\` 로 시작해서 “\` 으로 끝내면 됩니다.
+또는 \`\`\` 로 시작해서 \`\`\` 으로 끝내면 됩니다.
 
 코드 안에서는 자동으로 escap 처리를 해줍니다.(<, > 등등)
 
-리스트안에서 코드는 “\` 로 해줘야 합니다.
+리스트안에서 코드는 \`\`\` 로 해줘야 합니다.
 
 ### \<Link>
 
@@ -57,4 +57,7 @@ H3 ### , H4 #### , H5 ##### , H6 ######
 
 
 #### 참고
-[https://teragoon.wordpress.com/2012/04/04/](https://teragoon.wordpress.com/2012/04/04/)
+https://teragoon.wordpress.com/2012/04/04/
+
+https://help.github.com/articles/basic-writing-and-formatting-syntax/
+
