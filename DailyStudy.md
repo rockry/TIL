@@ -1,4 +1,7 @@
 # Algorithm
+## 2017-09-08
+- Udemy 코딩인터뷰 완벽준비 : 8
+    - 8 : 스택
 ## 2017-09-07
 - Udemy 코딩인터뷰 완벽준비 : 7
     - 7 : 링크드리스트
@@ -47,6 +50,9 @@
 - ListView 기본 사용법
 
 # Programming etc
+## 2017-09-08:
+- NamingRule
+- 2의 보수
 
 # Excercise
 ## 2017-09-05
