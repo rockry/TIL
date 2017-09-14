@@ -49,11 +49,33 @@
 
 # Web
 
-# Java
+# Java & Android
+## 2017-09-14
+- 유니코드
+    - http://jsonobject.tistory.com/246
+## 2017-09-13
+- 안드로이드 이미지 캐쉬
+    - http://androi.tistory.com/130
+    - https://kimdohyeong.gitbooks.io/android_official_training_kr/content/Caching_Bitmaps.html(Not Yet)
+    - https://developer.android.com/topic/performance/graphics/index.html(Not Yet)
+    - https://developer.android.com/topic/performance/graphics/cache-bitmap.html(Not Yet)
+- android animation(더 깊이 볼 필요.)
+    - https://material.io/guidelines/motion/material-motion.html#
+    - https://labs.ribot.co.uk/exploring-meaningful-motion-on-android-1cd95a4bc61d
+    - https://github.com/hitherejoe/animate
+    - https://developer.android.com/training/material/animations.html
+- Weak Reference, Soft Reference : http://itmining.tistory.com/10
+- Android ListView 사용하기 : http://thdev.tech/androiddev/2016/10/30/Android-CustomListView-Sample.html
+    - ListView / ViewHolder
+    - 더 깊이 볼 내용 : RecyclerView / ArrayAdapter / LruCache / Retrofit / Chrome Custom Tabs
+## 2017-09-13
+- BearCola Java 그리고 Android : 2017-06-18
+## 2017-09-12
+- BearCola Java 그리고 Android : 2017-06-04 / 2017-06-17
+- Udemy 코딩인터뷰 완벽준비 : 16
+    - 16 : Java 지식문제 : 오버로딩 vs 오버라이딩 / HashMap 동작 원리 / final, finally, finalize() / ThreadLocal
 ## 2017-09-09
 - Stack과 Queue
-
-# Android
 ## 2017-09-06
 - Fragment 기본 사용법
 ## 2017-09-05
