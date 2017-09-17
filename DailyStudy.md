@@ -1,4 +1,6 @@
 # Algorithm
+## 2017-09-17
+- KAKAO_Blind_모의문제 : 1,2
 ## 2017-09-11
 - Udemy 코딩인터뷰 완벽준비 : 15
     - 15 : 수학 및 응용문제
@@ -50,6 +52,10 @@
 # Web
 
 # Java & Android
+## 2017-09-16
+- Android Service
+- SoftReference & WeakReference
+- ListView & RecyclerView
 ## 2017-09-14
 - 유니코드
     - http://jsonobject.tistory.com/246
