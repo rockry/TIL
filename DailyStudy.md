@@ -52,6 +52,12 @@
 # Web
 
 # Java & Android
+## 2017-09-19
+- BearCola Java 그리고 Android : 2017-06-21
+    - View dispatchTouchEvent
+    - Dalvik 과 ART 의 차이
+    - Android N 변경사항
+    - 안드로이드 런타임 퍼미션
 ## 2017-09-18
 - BearCola Java 그리고 Android : 2017-06-21
     - enum 의 장점
