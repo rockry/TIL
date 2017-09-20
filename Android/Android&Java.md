@@ -36,6 +36,8 @@ String a = new String("abc"); 는 Heap 내의 일반 객체를 생성하고, 그
 프로세스는 자신만의 고유 공간과 자원을 할당 받아 사용하지만 그에 반해 스레드는 다른 스레드와 공간과 자원을 공유하여 사용하는 차이가 있습니다. 
  
 # ArrayList vs LinkedList
+http://seeit.kr/36
+
 ArrayList - 데이터 검색에 유리하며, 추가/삭제 시에는 성능을 고려해야함
 
 LinkedList - ArrayList 에 비해 데이터의 추가/삭제에 유리하지만 검색 시에는 성능을 고려해야함
