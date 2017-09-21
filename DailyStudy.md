@@ -52,6 +52,11 @@
 # Web
 
 # Java & Android
+## 2017-09-21
+- MultiThread Android Sample
+- Rx GuGuDan Example
+## 2017-09-20
+- 면접후기 정리 중
 ## 2017-09-19
 - BearCola Java 그리고 Android : 2017-06-21
     - View dispatchTouchEvent

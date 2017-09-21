@@ -352,3 +352,5 @@ public class Singleton {
 # 해시맵을 만들려면 무슨 자료구조를 쓸까? 
 기본적인 자료구조는 key, value 값을 저장하고 있는 Entry 가 있고 각 entry 를 저장하기 위한 array table이 있다. 
 
+# Android에서 @Inject, @Test
+http://d2.naver.com/helloworld/342818
