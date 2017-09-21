@@ -54,7 +54,7 @@
 # Java & Android
 ## 2017-09-21
 - MultiThread Android Sample
-- Rx GuGuDan Example
+- Rx GuGuDan Example (유동 - RxAndroid https://brunch.co.kr/@yudong/56)
 ## 2017-09-20
 - 면접후기 정리 중
 ## 2017-09-19
