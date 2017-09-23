@@ -52,6 +52,10 @@
 # Web
 
 # Java & Android
+## 2017-09-22
+- 람다
+    - https://programmers.co.kr/learn/courses/9/lessons/915
+    - http://d2.naver.com/helloworld/4911107
 ## 2017-09-21
 - MultiThread Android Sample
 - Rx GuGuDan Example (유동 - RxAndroid https://brunch.co.kr/@yudong/56)
@@ -150,7 +154,10 @@
 - BroadcastReceiver 동적 사용법
 - ListView 기본 사용법
 
-# Programming etc
+# etc
+## 2017-09-22:
+- github 유용한 단축키
+- Closure
 ## 2017-09-08:
 - NamingRule
 - 2의 보수
