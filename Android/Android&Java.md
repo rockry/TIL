@@ -354,3 +354,21 @@ public class Singleton {
 
 # Android에서 @Inject, @Test
 http://d2.naver.com/helloworld/342818
+
+# Java8 Optional
+실제 레퍼런스를 한번 감싸는 래퍼 객체를 만들어 null 체크를 내부로 숨겨 반복적인 null체크를 없애줌.
+```java
+public static void main(String args[]) {
+   String str = "hello";
+   Optional<String> o1 = Optional.of(str); // str이 null이면 NPE 발생
+   Optional<String> o2 = Optional.ofNullable(str); // str이 null이면 빈 Optional 객체 반환
+   Optional<String> o3 = Optional.empty(); // 빈 Optional 객체 반환
+}
+```
+출처: http://multifrontgarden.tistory.com/131 [우리집앞마당]
+
+# 람다 내부 구조
+아직 잘 이해 안됨..
+https://www.slideshare.net/knight1128/jdkjava-7-5-invokedynamic
+https://slipp.net/wiki/display/java/invokedynamic+by+example+and+byte+code
+http://jess-m.tistory.com/6

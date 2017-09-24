@@ -52,6 +52,9 @@
 # Web
 
 # Java & Android
+## 2017-09-24
+- Java8 Optional
+- 람다 내부 구조
 ## 2017-09-22
 - 람다
     - https://programmers.co.kr/learn/courses/9/lessons/915
