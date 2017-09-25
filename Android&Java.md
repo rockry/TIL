@@ -362,3 +362,22 @@ ArrayMap : 안드로이드에서 제공. HashMap과 같은 기능을 제공하�
 ArrayMap을 사용하기 좋은 경우 : 데이터 객체수가 1000개 미만, 데이터 처리(추가, 삭제, 조회)가 잘 일어나지 않는 경우.
 SparseArray : Key Value에 객체(참조형)을 이용해야 하는 ArrayMap과 달리 SparseArray는 기본형(Primitive Type)을 이용할 수 있음.
 https://brunch.co.kr/@oemilk/97
+
+# Java8 Optional
+실제 레퍼런스를 한번 감싸는 래퍼 객체를 만들어 null 체크를 내부로 숨겨 반복적인 null체크를 없애줌.
+```java
+public static void main(String args[]) {
+   String str = "hello";
+   Optional<String> o1 = Optional.of(str); // str이 null이면 NPE 발생
+   Optional<String> o2 = Optional.ofNullable(str); // str이 null이면 빈 Optional 객체 반환
+   Optional<String> o3 = Optional.empty(); // 빈 Optional 객체 반환
+}
+```
+출처: http://multifrontgarden.tistory.com/131 [우리집앞마당]
+
+# 람다 내부 구조
+아직 잘 이해 안됨..
+https://www.slideshare.net/knight1128/jdkjava-7-5-invokedynamic
+https://slipp.net/wiki/display/java/invokedynamic+by+example+and+byte+code
+http://jess-m.tistory.com/6
+
