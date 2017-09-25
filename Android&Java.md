@@ -62,6 +62,7 @@ LinkedList - ArrayList 에 비해 데이터의 추가/삭제에 유리하지만 
 getInstance 가 호출되기 전까지는 Singleton 인스턴스가 생성되지 않고, getInstance 가 호출되는 시점에 SingletonHolder가 참조되고 그 때 Singleton 객체가 생성된다. 
 
 지연된 초기화를 사용하기 때문에 메모리 점유율 면에서 유리하고 Synchronized 키워드를 사용하지 않기 때문에 성능 문제도 보이지 않는다. VM 이 클래스를 초기화하기 위한 필드 접근은 동기화하기 때문에 동기화 검사도 필요가 없다. 
+http://asfirstalways.tistory.com/335
  
 # Heap Data Stack 영역 
 - 코드 영역 : 실제 프로그램 코드가 적재되는 영역
@@ -354,3 +355,10 @@ public class Singleton {
 
 # Android에서 @Inject, @Test
 http://d2.naver.com/helloworld/342818
+
+# ArrayMap, HashMap
+HashMap : 키에 대한 해쉬값을 이용하여 값을 저장하고 조회하며, 키-값 쌍의 개수에 따라 동적으로 크기가 증가하는 Map, 데이터조회시 항상 O(1)의 장점.
+ArrayMap : 안드로이드에서 제공. HashMap과 같은 기능을 제공하지만 큰 배열 하나 대신 작은 배열 두 개를 이용해 낭비하는 메모리를 줄임. But 데이터 처리 비용 증가.
+ArrayMap을 사용하기 좋은 경우 : 데이터 객체수가 1000개 미만, 데이터 처리(추가, 삭제, 조회)가 잘 일어나지 않는 경우.
+SparseArray : Key Value에 객체(참조형)을 이용해야 하는 ArrayMap과 달리 SparseArray는 기본형(Primitive Type)을 이용할 수 있음.
+https://brunch.co.kr/@oemilk/97
