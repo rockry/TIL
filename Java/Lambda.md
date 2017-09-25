@@ -54,3 +54,9 @@ public List<String> findGuestNamesByCompany(String company) {
 ```
 
 http://d2.naver.com/helloworld/4911107#fn:3
+
+# 람다 내부 구조
+아직 잘 이해 안됨..
+https://www.slideshare.net/knight1128/jdkjava-7-5-invokedynamic
+https://slipp.net/wiki/display/java/invokedynamic+by+example+and+byte+code
+http://jess-m.tistory.com/6

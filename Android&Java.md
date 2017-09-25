@@ -55,6 +55,24 @@ LinkedList - ArrayList 에 비해 데이터의 추가/삭제에 유리하지만 
 # 제네릭이란? 
 클래스를 정의할 때에는 데이터 타입을 확정하지 않고, 인스턴스를 생성할 때 데이터 타입을 지정하는 기능을 제네릭이라고 한다. 
  
+# 싱글턴 더블체크드락
+```Java
+public class Singleton {
+    private volatile static Singleton singleton;
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            synchronized(this) {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+    private Singleton() {
+    }
+}
+```
 
 # Singleton 동기화  
 중첩 클래스를 이용한 Holder 를 사용하는 방법. 
@@ -62,6 +80,17 @@ LinkedList - ArrayList 에 비해 데이터의 추가/삭제에 유리하지만 
 getInstance 가 호출되기 전까지는 Singleton 인스턴스가 생성되지 않고, getInstance 가 호출되는 시점에 SingletonHolder가 참조되고 그 때 Singleton 객체가 생성된다. 
 
 지연된 초기화를 사용하기 때문에 메모리 점유율 면에서 유리하고 Synchronized 키워드를 사용하지 않기 때문에 성능 문제도 보이지 않는다. VM 이 클래스를 초기화하기 위한 필드 접근은 동기화하기 때문에 동기화 검사도 필요가 없다. 
+```java
+public class Singleton {
+    private Singleton() {}
+    private static class SingletoneHolder {
+        public static final Singleton INSTANCE = new Singleton();
+    }
+    public static Singleton getSingletonObject() {
+        return SingletonHolder.INSTANCE;
+    }
+}
+```
 http://asfirstalways.tistory.com/335
  
 # Heap Data Stack 영역 
@@ -111,8 +140,6 @@ new Thread(()->{
 3. WakeLock 이 무시된다. 
 4. Wi-Fi 스캔을 하지 않는다. 
  
-
-
 # 허프만 코드 알고리즘
 자주 쓰이는 문자에는 작은 bit 를 할당하고 덜 쓰이는 문자에는 큰 bit 를 할당해서 문자열을 전체적으로 압축하는 개념이다.
 
@@ -325,25 +352,6 @@ Synchronized 키워드를 AtomicBoolean, AtomicInteger 를 이용하여 변경 �
 교착 상태가 발생하는 것을 아예 막지 않고, 발생 시에 해결, 
 
 거의 무시해도 좋을 확률의 데드락이라면 무시 
- 
-# 싱글턴 더블체크드락
-```Java
-public class Singleton {
-    private volatile static Singleton singleton;
-    public static Singleton getInstance() {
-        if (singleton == null) {
-            synchronized(this) {
-                if (singleton == null) {
-                    singleton = new Singleton();
-                }
-            }
-        }
-        return singleton;
-    }
-    private Singleton() {
-    }
-}
-```
 
 # 해시코드란?
 객체를 구별하기 위해서 고유한 정수값으로 출력시켜주는 메소드이다. 
@@ -375,9 +383,5 @@ public static void main(String args[]) {
 ```
 출처: http://multifrontgarden.tistory.com/131 [우리집앞마당]
 
-# 람다 내부 구조
-아직 잘 이해 안됨..
-https://www.slideshare.net/knight1128/jdkjava-7-5-invokedynamic
-https://slipp.net/wiki/display/java/invokedynamic+by+example+and+byte+code
-http://jess-m.tistory.com/6
+# Retrofit, OkHttpClient
 
