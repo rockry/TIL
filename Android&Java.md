@@ -76,19 +76,20 @@ public class LinkedList {
 
     }
 
-    public void getIndex(int data) {
-        Node node = head;
-        int cnt = 0;
-        while(node != null) {
-            if(node == null) {
-                throw new RuntimeException("There is no data " + data);
+    public int get(int index) { //뒤에서부터 0번
+        Node runner = head;
+        Node target = head;
+        for(int i = 0; i < index; i++) {
+            if(runner.next == null) {
+                return null;
             }
-            if(data == node.data) {
-                return cnt;
-            }
-            cnt++;
-            node = node.next;
+            runner = runner.next;
         }
+        while(runner.next != null) {
+            runner = runner.next;
+            target = target.next;
+        }
+        return target.data;
     }
 }
 
@@ -97,6 +98,7 @@ public class Node {
     int data;
 }
 ```
+https://opentutorials.org/module/1335/8857
  
 # Quick Sort  
  
@@ -112,7 +114,7 @@ public class Node {
 클래스를 정의할 때에는 데이터 타입을 확정하지 않고, 인스턴스를 생성할 때 데이터 타입을 지정하는 기능을 제네릭이라고 한다. 
  
 # 싱글턴 더블체크드락
-```Java
+```java
 public class Singleton {
     private volatile static Singleton singleton;
     public static Singleton getInstance() {
@@ -166,7 +168,7 @@ add, remove 와 같이 삽입, 삭제하는 자료구조인 것은 동일 하나
 # Lambda 식이란? 
 "식별자 없이 실행 가능한 함수 표현식"
 > 기존 
-```Java
+```java
 new Thread(new Runnable() {
     @Override
     public void run() {
@@ -176,7 +178,7 @@ new Thread(new Runnable() {
 ```
 
 > 람다 
-```Java
+```java
 new Thread(()->{
     System.out.println("Hello World.");
 }).start();
