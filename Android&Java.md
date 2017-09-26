@@ -41,6 +41,62 @@ http://seeit.kr/36
 ArrayList - 데이터 검색에 유리하며, 추가/삭제 시에는 성능을 고려해야함
 
 LinkedList - ArrayList 에 비해 데이터의 추가/삭제에 유리하지만 검색 시에는 성능을 고려해야함
+
+# LinkedList 구현
+```java
+public class LinkedList {
+    private Node head;
+    
+    public void addFirst(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void insert(int data, int location) {
+        Node node = head;
+        Node newNode = new Node();
+        newNode.data = data;
+        for(int i = 0; i < location; i++) {
+            if(node == null) {
+                break;
+            }
+            node = node.next;
+        }
+        newNode.next = node.next;
+        node.next = newNode;
+    }
+
+    public void removeFirst() {
+        if(head == null) {
+            throw new RuntimeException("There is no node to remove");
+        }
+        head = head.next;
+
+    }
+
+    public void getIndex(int data) {
+        Node node = head;
+        int cnt = 0;
+        while(node != null) {
+            if(node == null) {
+                throw new RuntimeException("There is no data " + data);
+            }
+            if(data == node.data) {
+                return cnt;
+            }
+            cnt++;
+            node = node.next;
+        }
+    }
+}
+
+public class Node {
+    Node next;
+    int data;
+}
+```
  
 # Quick Sort  
  
