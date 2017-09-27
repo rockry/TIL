@@ -1,8 +1,8 @@
 # 안드로이드 뷰의 생성 과정
-![안드로이드 뷰의 생성 과정](../images/안드로이드뷰의생성과정.jpg "Process of creating View in Android")
+![안드로이드 뷰의 생성 과정](./images/안드로이드뷰의생성과정.jpg "Process of creating View in Android")
 
 # 안드로이드 액티비티 생명주기 
-![안드로이드 액티비티 생명주기](../images/액티비티생명주기.jpg "Lifecycle of Activity in Android")
+![안드로이드 액티비티 생명주기](./images/액티비티생명주기.jpg "Lifecycle of Activity in Android")
 
 # enum 의 장점
 간결한 코드로 인해 개발 및 유지보수가 용이하게 합니다. 
@@ -100,7 +100,7 @@ public class Node {
 ```
 https://opentutorials.org/module/1335/8857
  
-# Quick Sort  
+# Quick Sort, Stack, Queue, Tree 구현
  
 # Iterator 를 쓰지 않고 직접 참조 시 문제점
 내부가 노출되고 자료 구조 마다 순환하는 방식이 달라진다. 
