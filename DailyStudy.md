@@ -1,8 +1,11 @@
 
 # Java & Android
+## 2017-09-27
+- LinkedList
+- JCF
 ## 2017-09-25
 - ArrayMap
-- Retrofit, OkHttpClient
+- Retrofit, OkHttpClient(보류)
 ## 2017-09-24
 - Java8 Optional
 - 람다 내부 구조
