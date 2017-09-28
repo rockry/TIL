@@ -162,6 +162,10 @@
 # Web
 
 # etc
+## 2017-09-28:
+- Machine Learning 기초 세미나(with BetaGo)
+    : y = Wx + B => Cost를 줄이는 W를 학습한다.(W = weight, B = Bais)
+    : ?? + Softmax
 ## 2017-09-22:
 - github 유용한 단축키
 - Closure
