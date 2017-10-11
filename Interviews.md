@@ -44,37 +44,37 @@ https://opentutorials.org/module/2870/16572
 
     | 생성패턴 | 객체의 생성방식을 결정하는 패턴 |
     | --------- | --------- |
-    | Factory Method | 슈퍼클래스에서 파생된 클래스들이 하나의 생성작업함수(인터페이스)를 재정의하여 사용 |
-    | Abstract Factory | Factory를 추상화하여 객체 생성과정을 사용하는 측에서 결정.(Strategy + Factory) |
+    | Factory Method | 슈퍼클래스에서 파생된 클래스들이 하나의 생성작업함수(인터페이스)를 재정의하여 사용. 어떤 객체를 생성할지 각각의 파생 클래스들이 결정. |
+    | Abstract Factory | Factory를 추상화하여 멤버객체구성을 사용하는 측에서 결정.(Strategy + Factory), 여러 객체를 담은 Factory에서 객체의 구성을 각각 다르게 구성할 때 사용. |
     | Singleton | 프로그램에 인스턴스가 하나만 존재하고 어디서든 인스턴스에 접근할 수 있도록 하는 패턴 |
 
     | 구조패턴 | 객체를 조직/구조화 하는데 유용한 패턴 |
     | --------- | --------- |
+    | Facade | 여러가지 API를 통합한 단일 API를 제공함으로써 모든 서브시스템을 컨트롤, 여러 객체를 감싸서 인터페이스를 단순화 |
     | Adapter | 객체를 감싸서 다른 인터페이스 제공 (인터페이스 불일치 해결) |
-    | Decorator | 재귀적 포함을 사용한 동적 기능 추가(Java IO) |
-    | Facade | 하나의 클래스에 대해 간단한 인터페이스를 제공함으로써 모든 서브시스템을 컨트롤 |
-    | Proxy | 객체를 감싸서 객체에 대한 접근 제어 |
+    | Decorator | 객체의 재귀적 포함을 사용한 기능의 동적 추가(Java IO), 다른 객체를 감싸서 새로운 행동 추가 |
+    | Proxy | 객체를 감싸서 객체에 대한 접근 제어(래퍼) |
 
     | 행위패턴 | 객체의 행위를 조직화하는데 유용한 패턴 |
     | --------- | --------- |
-    | Iterator | 컬렉션 내부를 드러내지 않으면서 컬렉션 내의 모든 객체에 대한 반복 작업 처리 |
+    | Iterator | 컬렉션 내부를 드러내지 않으면서 컬렉션 내의 모든 객체에 대한 탐색 작업 처리 |
     | Observer | 객체의 상태변화를 관찰하는 관찰자들을 객체가 가지고 있다가, 상태변화시 통지하는 패턴(1:n) |
     | Strategy | 알고리즘을 구조화하여 교체하여 사용할 수 있도록 한 구조(클래스가 호출할 Strategy 인터페이스를 각 구현체에서 각자의 동작 정의) |
 
--	말씀하신 디자인패턴을 각각 예를 들어 설명해주세요
-    * singleton :  
-    * factory : 
+-	말씀하신 디자인패턴을 각각 예를 들어 설명해주세요.
+    * singleton : 프로그램 전체에서 하나의 객체를 공유하기를 원할때. 로거, 프로그램 전체 매니저, 뮤직플레이어 등
+    * factory : 버튼과 스크롤을 가진 객체를 버튼과 스크롤 종류에 따라 객체의 종류를 나눌때. 예) 객체(원형버튼, 원형스크롤), 객체(사각버튼, 사각스크롤)
+    * facade : 가입 신청 시, 회원가입 + 기관 생성 + 기관 소속 + 승인까지의 API통합
     * adapter : 다양한 인터페이스에서 원하는 데이터를 얻을수 있게 해줌. ArrayAdapter CursorAdapter 등 다양한 Dataset에 대해, 모두 getView(), getCount(), getItem()등 통일된 데이터를 얻을 수 있게 함. (http://sunphiz.me/wp/archives/1292)
-    * facade :
     * decorator : 원래 객체를 포함하고 그 객체를 이용하여 추가적인 동작을 구현. 커피(에스프레소/드립/디카페인) + 데코(우유/두유/휘핑) => 데코 객체는 커피를 포함하고 있음.
-    * proxy :
+    * proxy : 캐싱, 방화벽, 동기화 등
     * strategy : 동작을 위한 인터페이스를 다양한 동작에 맞게 구현. Shooter interface를 SoccerShooter / BasketballShooter 에서 각각의 동작 구현.
-    * iterator :
+    * iterator : 리스트 iterator
     * observer : 방송을하는 주체가 있고 각 observer는 방송을 listen한다. A.register, B.register 후 방송국.update 하면 A와 B 각각의 update가 호출되어 방송국의 update를 들을 수 있다.
     https://www.slideshare.net/soomong/pattern-4797069
     http://huiyu.tistory.com/category/Programming/DesignPatterns
-    https://gist.github.com/dwpark1112/a164d1cdc4d1c771b0972080f616394c
     http://copynull.tistory.com/category/Gof%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4?page=2
+    https://gist.github.com/dwpark1112/a164d1cdc4d1c771b0972080f616394c
 -	언급하신 Singleton 은 논란이 있는 부분이 있습니다. 어떤 부분인지 아시나요?
     * Singleton은 멀티스레드 환경에서 동기화 문제가 있습니다. synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
@@ -134,7 +134,7 @@ https://opentutorials.org/module/2870/16724
 - RecyclerView Holder
     * 기존 ListView에서 View의 재사용을 위해서 ViewHolder 개념을 사용하였으나 RecyclerView는 Holder를 강제화 함으로써 성능의 향상을 꾀했다.
 - 안드로이드 성능 개선 툴
-    *  
+    *  안드로이드 앱 성능개선 작업을 해보지 못했습니다.
 - onTouchEvent 리턴값의 의미 등을 자세히 설명
     * 가장 상위 레이어부터 dispatchTouchEvent가 호출되며, dispatchTouchEvent는 하위레이어 dispatchTouchEvent를 호출하고 하위레이어의 터치이벤트 처리결과에 따라 true일 경우 결과를 리턴, false일 경우 자기자신의 이벤트 처리 메소드(onTouch / onTouchEvent)로 이벤트를 보내고 결과를 리턴한다.
     * 모든 메서드는 리턴값이 boolean형인데 true일 경우 이벤트를 처리했음을 의미하고, false일 경우 이벤트가 처리되지 않았음을 의미한다.
@@ -144,7 +144,7 @@ https://opentutorials.org/module/2870/16724
     * 보통 터치다운의 위치에서 20픽셀 이상 이동되면 이벤트를 가로채서 onIterceptTouchEvent 에 리턴값을 true 로 한다.
     https://moka-a.github.io/android/touch-event-transfer/
 - 구조 개선 시에 사용한 디자인 패턴
-    * 
+    * 디자인패턴을 많이 사용해보지 못했습니다.
 - DB 접근 시 ANR 발생은 어떤 식으로 개선했는가?
     * 쿼리가 복잡하고 데이터가 많은 경우에는 ANR이 발생한다. ANR 방지를 위해 별도의 Thread로 쿼리를 처리해야한다. 별도의 Thead를 쓰기가 번거로움을 방지하기위해 안드로이드에서는 AsyncQueryHandler를 제공해주고 있다.
     http://www.kmshack.kr/2014/01/db-query%EB%A5%BC-%EB%B3%84%EB%8F%84%EC%9D%98-thread%EB%A1%9C-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0/ 
@@ -184,47 +184,76 @@ https://opentutorials.org/module/2870/16724
     
 # N사 (1)
 https://opentutorials.org/module/2870/16875
-- Activity lifecycle -> onStart onResume 차이 
+- Activity lifecycle -> onStart onResume 차이
+    * 
 - 디자인패턴 아는 것을 말해보세요
+    * (위쪽 참조)
 - AsyncTask 최근 변화
+    * 
 - ListView, RecyclerView 차이와 ConstraintLayout behavior 적용이 왜 안되는지?
+    * 
 - 최근 안드로이드 트렌드
+    * 
 - Interface 와 Abstract 에 대한 설명
+    * 
 - Set, Map, List 에 대해 설명
+    * 
 - 동기화 방법에 대해 설명
+    * 
 - 해시맵을 사용할 때 주의점은 무엇인가?
+    * 
 - 프로세스와 스레드에 대해서 설명
+    * (위쪽 참조)
 - GC 과정에 대해서 설명
+    * 
 - 접근지정자에 대해서 설명
+    * 
 - 오버로딩과 오버라이딩에 대해서 설명
+    * (위쪽 참조)
 - 리플렉션에 대해 설명
+    * 
 - Parcelable 에 대해서 설명
+    * 
 - Strict Mode 에 대해서 설명
+    * 
 - 일반 뷰와 Surface View 의 차이
+    * 
 - Handler, Looper 에 대해서 설명
+    * 
 - ANR 에 대해서 설명 피하려면 어떻게?
+    * 
 - 백키로 앱을 종료했을 때 프로세스는 종료되나요, 되지 않나요?
+    * 
 - 종료되면 왜 종료되나요? 종료되지 않으면 왜 종료되지 않나요?
+    * 
 - Zygote 에 대해서
 
 # N사 (2)
 https://opentutorials.org/module/2870/16969
 - 자신의 장점과 단점
+    * 
 - 요즘 기술 트렌드 학습하는 법
+    * 
 - 부서나 업무 롤의 분쟁이 일어났을 때 해결한 경험
-- 이직하려는 이유는?
+    * 
+- 이직하려는 이유는? (중복)
 - 이전 직장에서 맡았던 개발과 역할?
+    * 
 - 배우고 싶은 기술은 어떤 것이 있나요?
+    * 
 - wait / notifyall 관련 손코딩
+    * 
 - quicksort 손코딩
+    * 
 - quicksort 알고리즘 과정 그림으로 설명 (화이트보드)
+    * 
 - Circular List 와 일반 Linked List 구분하는 법은?
      * Floyd's Cycle-Finding Algorithm
      * 러너 기법이라고도하며, 속도가 다른 2개의 임시 Node를 가지고 list traversal하면서 Circular일 경우 빠른 Node가 느린 Node를 따라잡도록 만드는 방법.
      * 속도 O(n) 공간 O(1)
      http://egloos.zum.com/minjang/v/1687021
      http://egloos.zum.com/lefoot/v/5226985
-- 즐겨쓰는 디자인패턴과 이유
+- 즐겨쓰는 디자인패턴과 이유 (중복)
 - GC 과정을 설명해주세요
 - GC 알고리즘을 설명해주세요
 - Dalvik 에서 Art 로 바뀌면서 GC 알고리즘이 변경되었는데 어떻게 변경되었나요?
@@ -235,7 +264,7 @@ https://opentutorials.org/module/2870/16969
 - HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 - 자신이 생각하는 OOP 란 무엇인가?
 - 자바의 메모리 구조에 대해서 설명해주세요
-- 프로세스 및 스레드에 대해서 설명해주세요
+- 프로세스 및 스레드에 대해서 설명해주세요 (중복)
 - Singleton 패턴을 멀티스레드 환경에서 적용하는 3가지 방법에 대해서 설명해 주세요
     * synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Double check synchronization을 사용하고, Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
@@ -266,7 +295,7 @@ public class SampleModule {
 - 데드락 회피 방법 및 대응 방법에 대해서 설명해주세요
 - Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
 - interface 와 abstract 의 차이
-- 오버로딩과 오버라이딩의 차이
+- 오버로딩과 오버라이딩의 차이 (중복)
 - 오버로딩이 제네릭에서 쓰일 때는 어떻게 사용되나요?
 - 컴파일 타임 오버라이딩 및 런타임 오버라이딩에 대해 설명해주세요
 - Java ITC?
@@ -279,6 +308,7 @@ public class SampleModule {
 - 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요
 - 인텐트와 인텐트 필터의 개념을 알려주세요
 - 이미지 안드로이드 라이브러리를 무엇을 사용해보았나요?
+    * Picasso, Glide
 - 해당 라이브러리를 사용하는 이유는 무엇인가요?
 - RxJava 란 무엇인가요
 - 안드로이드에서 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 적어주세요
