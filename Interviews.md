@@ -185,31 +185,70 @@ https://opentutorials.org/module/2870/16724
 # N사 (1)
 https://opentutorials.org/module/2870/16875
 - Activity lifecycle -> onStart onResume 차이
-    * 
-- 디자인패턴 아는 것을 말해보세요
-    * (위쪽 참조)
+    * onCreate -> onStart -> onResume -> onPuase -> onStop -> onDestroy
+    * onStart는 Activity가 정지된 상태에서 전면으로 돌아올때 혹은 최초 생성 될때 onCreate 이후에 호출(Activity가 비 정상적으로 소멸됬을 경우를 대비해 리소스들을 확인하고 재 할당 등의 작업들을 하는것을 권장, receiver 등록이나 state initial)
+    * onResume은 Acitivity가 다른 작업에 의해 잠시 onPuase(focus를 잃음)되었다가 다시 실행될때마다 호출(onResume 이전에 onActivityResult나 onSaveInstanceState가 불리므로 상태값을 가지고 준비과정을 거칠때는 onResume에서 수행이 필요. onStart와는 다르게 focus를 잃은 시점에 동작을 멈추고 다시 실행해야하는 작업들을 수행.)
+    https://stackoverflow.com/questions/9934248/android-when-to-use-onstart-onstop
+    https://stackoverflow.com/questions/21302220/what-does-onstart-really-do-android
+- 디자인패턴 아는 것을 말해보세요 (중복)
 - AsyncTask 최근 변화
-    * 
+    * 5.1부터 AsyncTask 내부의 Handler가 Singleton으로 변경.
+    http://sjava.net/tag/android-asynctask/
+    * 3.2부터는 병렬처리를 위해 .executeOnExecutor(AsyncTask .THREAD_POOL_EXECUTOR, ...); 와 같이 사용해야 함.
+    https://www.android-tech.io/category/%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EB%8B%B4/
+    * IO 관련 로직을 UI 레이어에서 처리해야 하는 점, 메인 스레드 외에서는 시작을 할 수 없는 것, 메모리 누수가 일어나기 매우 쉬운점 등을 이유로 RxJava를 사용하는 흐름도 보이고 있다.
+    http://kimjihyok.info/2017/06/02/asynctask%EC%99%80-%EB%B9%84%EA%B5%90%ED%95%B4%EC%84%9C-%EB%8B%B9%EC%8B%A0%EC%9D%B4-rxjava%EB%A5%BC-%EB%8B%B9%EC%9E%A5-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0/
 - ListView, RecyclerView 차이와 ConstraintLayout behavior 적용이 왜 안되는지?
-    * 
+    * RecyclerView와 ListView의 가장 큰 차이점은 Layout Manager 추가와, View Holder 패턴의 의무사용, Item에 대한 뷰의 변형이나 애니메이션할 수 있는 개념이 추가된 것 입니다. 
+    http://itmining.tistory.com/12
 - 최근 안드로이드 트렌드
-    * 
+    * Kotlin, RxAndroid, Retrofit등의 library, etc??
+    https://medium.com/@joongwon/%EC%89%B4%EC%83%88-%EC%97%86%EC%9D%B4-%EB%B0%94%EB%80%8C%EA%B3%A0-%EC%9E%88%EB%8A%94-%EA%B0%9C%EB%B0%9C-%ED%8A%B8%EB%A0%8C%EB%93%9C-f18ccad7ed69
 - Interface 와 Abstract 에 대한 설명
-    * 
+    * Interface는 파생될 클래스들이 구현해야할 공통점들을 모아놓은 객체이고,
+    Abstract 클래스는 파생될 클래스들이 variation할 수 있는 abstract method를 가진 클래스
+
+    <공통점>
+        
+        - 추상클래스와 인터페이스는 선언만 있고 구현 내용이 없다.
+        - 그래서 자기 자신이 new를 통해 객체를 생성할 수 없으며, 상속받은 자식만이 객체를 생성할 수 있다.
+        - 상속받은 자식이 구현을 반드시 하도록 해야할 때 사용한다.
+        - JAVA에서는 type이 지정되있기 때문에 선언된 type과 자식의 type이 같아야만 한다. 
+
+    <차이점>
+    | 인터페이스(Interface) | 추상클래스(Abstract Class) |
+    | -------------------- | -------------------------
+    구현 객체의 같은 동작을 보장하기 위함 | 추상클래스를 상속받아 기능을 이용하고, 확장시키기 위함 
+    다중 상속 가능 | 다중 상속 불가능 
+    추상메서드만 가능 | 일반메서드+추상메서드 가능
+    상수+추상메서드 형태 | 일반변수(가능)+일반메서드(가능)+추상메서드 형태
+    생성자와 일반변수를 가질 수 없음 | 생성자와 일반변수 모두 가질 수 있음
+    implments | extends
+    메서드 선언만 가능 | 메서드의 부분적인 구현이 가능
+
+    http://private.tistory.com/20
+    http://silentcargo.tistory.com/76
 - Set, Map, List 에 대해 설명
     * 
+    | 인터페이스 | 구현 클래스 | 특징 | 
+    | --------- | ---------- | ---- |
+    List | LinkedList / Stack / Vector /ArrayList | 순서가 있는 데이터의 집합, 데이터의 중복을 허용한다.
+    Set | HashSet / TreeSet | 순서가 없는 데이터의 집합, 데이터의 중복을 허용하지 않는다. 
+    Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍으로 이루어진 데이터의 집합, 순서는 유지되지 않고, 키는 중복을 허용하지 않으며 값의 중복을 허용한다.
+http://hackersstudy.tistory.com/26
+http://platonic.tistory.com/entry/Java-Collections-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-List-Set-Map-Tree-Stack-Iterator-Enumeration
 - 동기화 방법에 대해 설명
-    * 
-- 해시맵을 사용할 때 주의점은 무엇인가?
-    * 
-- 프로세스와 스레드에 대해서 설명
-    * (위쪽 참조)
+    * 블록 synchronized, 메소드 synchronized, volatile, ConcurrentUtils
+    https://okky.kr/article/279692
+    http://ooz.co.kr/71
+- HashMap을 사용할 때 주의점은 무엇인가?
+    * 속도를 위해 동기화 지원안함. synchronizedMap 이나 ConcurrentHashMap 사용.
+- 프로세스와 스레드에 대해서 설명 (중복)
 - GC 과정에 대해서 설명
     * 
 - 접근지정자에 대해서 설명
     * 
-- 오버로딩과 오버라이딩에 대해서 설명
-    * (위쪽 참조)
+- 오버로딩과 오버라이딩에 대해서 설명 (중복)
 - 리플렉션에 대해 설명
     * 
 - Parcelable 에 대해서 설명
@@ -294,7 +333,7 @@ public class SampleModule {
 - 데드락 발생 조건에 대해서 설명해주세요
 - 데드락 회피 방법 및 대응 방법에 대해서 설명해주세요
 - Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
-- interface 와 abstract 의 차이
+- interface 와 abstract 의 차이 (중복)
 - 오버로딩과 오버라이딩의 차이 (중복)
 - 오버로딩이 제네릭에서 쓰일 때는 어떻게 사용되나요?
 - 컴파일 타임 오버라이딩 및 런타임 오버라이딩에 대해 설명해주세요

@@ -206,7 +206,7 @@ AABBAC 가 있다면 가장 많이 사용하는 순으로 A에는 0, B에는 01,
 # ListView vs RecyclerView  
 http://itmining.tistory.com/12
 
-RecyclerView와 ListView의 가장 큰 차이점은 Layout Manager와, View Holder 패턴의 의무사용, Item에 대한 뷰의 변형이나 애니메이션할 수 있는 개념이 추가되었습니다. 
+RecyclerView와 ListView의 가장 큰 차이점은 Layout Manager와, View Holder 패턴의 의무사용, Item에 대한 뷰의 변형이나 애니메이션할 수 있는 개념이 추가된 것 입니다. 
 
 # Annotation 이란?  
 어노테이션은 소스 코드에 메타데이터를 삽입하는 것이기 때문에 잘 이용하면 구독성 뿐 아니라 체계적인 소스 코드를 구성하는데 도움이 됩니다. 
