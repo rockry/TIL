@@ -297,14 +297,16 @@ https://opentutorials.org/module/2870/16969
 - 요즘 기술 트렌드 학습하는 법
     * 온오프믹스 세미나, 밋업 모임, Facebook/google group, 고수들 블로그나 github
 - 부서나 업무 롤의 분쟁이 일어났을 때 해결한 경험
-    * 
+    * 분쟁이 일어났다는 이야기는 R&R이 불분명한 경우가 많다. R&R 관계를 잠시 제쳐두고, 업무자체의 목적과 지금 해결해야되는 사항에 대해서 고민한다. 그리고 서로서로 적절히 업무배분을 한다.
 - 이직하려는 이유는? (중복)
 - 이전 직장에서 맡았던 개발과 역할?
-    * 
+    * 안드로이드 Wi-Fi Framework/Library 기능을 담당하면서 모델 출시를 위한 탑재 및 최적화, 이슈해결, 사업자 신규기능 구현, 홈로봇 서비스 제공 안드로이드 어플리케이션 개발, Angularjs를 이용한 IoT 제품 연동 관리 하이브리드 앱.
 - 배우고 싶은 기술은 어떤 것이 있나요?
-    * 
+    * 서비스 구조 설계(디자인), 어플리케이션 최적화, 대량 Data 처리, RxJava등의 신규 기술 등
 - wait / notifyall 관련 손코딩
     * 
+    - http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
+
 - quicksort 손코딩
     * 
 - quicksort 알고리즘 과정 그림으로 설명 (화이트보드)
@@ -332,12 +334,17 @@ https://opentutorials.org/module/2870/16969
     * Bubble : 0~n까지 두수를 비교하여 위치를 교환하는 방식으로 가장 큰 수를 고른 후, n번 반복하여 정렬하는 방식. O(n2)
     * Selection : 0~n까지 탐색하여 가장 큰 수(또는 작은수)를 n번 선택하는 방식.  O(n2)
     * Insertion : 정렬된 배열을 만들어가며, 원소를 하나씩 추가하여 적절한 위치에 삽입하는 방식. O(n2). 이미 정렬되어있을 경우 최고!
-    * Quick : pivot을 중심으로 pivot보다 작은수와 큰수를 나누어가며 logn번 반복하는 방식. O(nlogn). 피벗선택을 잘못할 경우 O(n2) 됨.
-    * Radix : 
-    * Merge : 
-    * Heap : 
+    * Quick : 연속적인 분할에 의한 정렬. pivot을 중심으로 pivot보다 작은수와 큰수를 나누어가며 logn번 반복하는 방식. O(nlogn). 피벗선택을 잘못할 경우 O(n2) 됨.
+    * Radix : 정수 자리수의 숫자를 기준으로 큐에 넣어서 순서대로 꺼내는 방식으로 정렬을 기준이 되는 자리수를 바꿔가면서 정렬을 하는 알고리즘. O(kn)
+    * Merge : 원소 개수가 1 또는 0이 될 때까지 두 부분으로 자른 뒤 앞의원소부터 크기를 비교해 병합해 나가며 정렬하는 알고리즘. O(nlogn). 일반적으로 퀵정렬보다 느리고 메모리도 필요하지만, stable하다.
+    * Heap : 원소들을 전부 Heap(부모의 값이 항상 최소 or 최대 값인 완전 이진 트리)에 삽입 후, 루트를 출력하고 힙에서 제거하는 동작을 반복. 항상 O(nlogn).
     - https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 - JDK 의 Sort 는 어떻게 되어있나요?
+    * JDK 1.8 Arrays.sort() 에서는 내부적으로 Dual-Pivot QuickSort 을 사용
+    - http://iloveulhj.github.io/posts/java/java-collection-sort.html
+- Merge Sort 와 Quick Sort 의 장단점 및 시간복잡도, 공간복잡도를 알려주세요
+    * merge는 stable but 추가 메모리 사용. quick은 pivot을 어떻게 잡느냐에 따라 더 빠를 수 있고, 최악 O(n2). 동일하게 분할정복을 사용하지만 퀵정렬은 분할과 동시에 pivot을 기준으로 정렬하기 때문에 분할이 끝난시점에 정렬이 끝나 있다. 분할한 공간을 참조할 때 cpu 캐시의 히트율이 높아 일반적으로 Merge보다 빠름.
+    https://dodo4513.github.io/2017/04/09/sort_2/
 - HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 - 자신이 생각하는 OOP 란 무엇인가?
 - 자바의 메모리 구조에 대해서 설명해주세요
@@ -353,8 +360,8 @@ https://opentutorials.org/module/2870/16969
         return InstanceHolder.instance;
     }
 ```
-    https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
-    interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
+    - https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
+    * interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
 ```java
 public class SampleModule {
     interface Holder {
@@ -365,9 +372,8 @@ public class SampleModule {
     }
 }
 ```
-    http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
+    - http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
 
-- Merge Sort 와 Quick Sort 의 장단점 및 시간복잡도, 공간복잡도를 알려주세요
 - 데드락 발생 조건에 대해서 설명해주세요
 - 데드락 회피 방법 및 대응 방법에 대해서 설명해주세요
 - Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
