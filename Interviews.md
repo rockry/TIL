@@ -1,6 +1,4 @@
-# SK 테크엑스 면접
-2017년 5월 12일 금요일
- 
+# SK TechX
 1.	Java Collection Framework 에 대해서 설명하라
 2.	Android View 가 생성되는 Callback 과정에 대해서 설명하라
 3.	Android 생명주기를 설명하라 
@@ -21,7 +19,7 @@
 18.	Linked List 와 Array List 의 차이점
 19.	Weak Reference 와 Strong Reference 에 대해 설명하라  
 
-# N사 전화면접
+# N사 전화
 https://opentutorials.org/module/2870/16572
 -	이직 사유
     * 제조사에서 제품 중심의 개발 프로세스 및 관점하에 SW 개발을 진행했는데, 서비스 관점에서의 SW 개발에 관심이 있었습니다. 개인적으로 서비스 측면에서의 기술적 완성도를 높이는데 한계를 느꼈고, 이직을 통해서 개발자로서 더 성장하고 싶었습니다. 서비스 개발의 전문가들에게 많이 배우고 커뮤니케이션 하면서 기술적인 성장을 이루고 싶었습니다.
@@ -318,12 +316,27 @@ https://opentutorials.org/module/2870/16969
      http://egloos.zum.com/minjang/v/1687021
      http://egloos.zum.com/lefoot/v/5226985
 - 즐겨쓰는 디자인패턴과 이유 (중복)
-- GC 과정을 설명해주세요
+- GC 과정을 설명해주세요 (중복)
 - GC 알고리즘을 설명해주세요
+    *
 - Dalvik 에서 Art 로 바뀌면서 GC 알고리즘이 변경되었는데 어떻게 변경되었나요?
+    *
 - HashTable 을 구현한다면 어떻게 구현하실래요?
+    * key, value, hash function, add, remove, 충돌처리방식, resizing
+    - http://bcho.tistory.com/1072
+    - http://hyeonstorage.tistory.com/265
 - Hash 를 쓰는 이유는 무엇인가요?
+    * access time이 상수시간(검색이 빠름), 삽입/삭제 쉬움
 - 아시는 Sort 알고리즘 모두 설명해주세요
+    * Bubble, Selection, Insertion, Quick, Radix, Merge, Heap
+    * Bubble : 0~n까지 두수를 비교하여 위치를 교환하는 방식으로 가장 큰 수를 고른 후, n번 반복하여 정렬하는 방식. O(n2)
+    * Selection : 0~n까지 탐색하여 가장 큰 수(또는 작은수)를 n번 선택하는 방식.  O(n2)
+    * Insertion : 정렬된 배열을 만들어가며, 원소를 하나씩 추가하여 적절한 위치에 삽입하는 방식. O(n2). 이미 정렬되어있을 경우 최고!
+    * Quick : pivot을 중심으로 pivot보다 작은수와 큰수를 나누어가며 logn번 반복하는 방식. O(nlogn). 피벗선택을 잘못할 경우 O(n2) 됨.
+    * Radix : 
+    * Merge : 
+    * Heap : 
+    - https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 - JDK 의 Sort 는 어떻게 되어있나요?
 - HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 - 자신이 생각하는 OOP 란 무엇인가?
@@ -389,9 +402,10 @@ public class SampleModule {
 
 ## 그외
 - zip / CountDownLatcher / flatMap
-- 레트로핏, 글라이드, 피카소, 슈가레코드, Dagger, RxJava, RxAndroid, Fresco, butterKnife, sqlbrite&delight, greendao
+- 레트로핏, 글라이드, 피카소, Fresco, Dagger, RxJava, RxAndroid, butterKnife, sqlbrite&delight, greendao, 슈가레코드
 - JUnit, mockito, ATSL, stetho, leakcanary
 - Android 아키텍트 패턴 (MVP, MVVM 등)
+    * https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
 - Android UnitTest
 - TDD
 - GCM, FCM, Firebase
