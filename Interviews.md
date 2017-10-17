@@ -304,9 +304,19 @@ https://opentutorials.org/module/2870/16969
 - 배우고 싶은 기술은 어떤 것이 있나요?
     * 서비스 구조 설계(디자인), 어플리케이션 최적화, 대량 Data 처리, RxJava등의 신규 기술 등
 - wait / notifyall 관련 손코딩
-    * 
+```java
+    public synchronized methodA() {
+    while(조건만족하지 않으면) {
+        try {
+            wait();
+        catch(InterruptedException e) {
+        }
+        ~~~
+        this.notifyAll();
+    }
+```
     - http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
-
+    - http://kiwi99.tistory.com/21
 - quicksort 손코딩
     * 
 - quicksort 알고리즘 과정 그림으로 설명 (화이트보드)
@@ -347,7 +357,14 @@ https://opentutorials.org/module/2870/16969
     https://dodo4513.github.io/2017/04/09/sort_2/
 - HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 - 자신이 생각하는 OOP 란 무엇인가?
+    * 객체지향 프로그래밍 이란 캡슐화, 상속, 다형성 을 이용하여 코드 재사용을 증가시키고, 유지보수를 감소시키는 장점을 얻기 위해서 객체들을 연결 시켜 프로그래밍 하는 것 입니다.
+    * Class를 구성하여 객체(Instance)를 생성하는 것을 기본으로 프로그램 로직을 실행하도록 지향하는 프로그래밍.
+    - http://vandbt.tistory.com/10
 - 자바의 메모리 구조에 대해서 설명해주세요
+    * 
+    - https://joesimong.blogspot.kr/2014/04/java.html
+    - http://gbsb.tistory.com/4
+    - http://re-build.tistory.com/2
 - 프로세스 및 스레드에 대해서 설명해주세요 (중복)
 - Singleton 패턴을 멀티스레드 환경에서 적용하는 3가지 방법에 대해서 설명해 주세요
     * synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Double check synchronization을 사용하고, Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
@@ -375,8 +392,15 @@ public class SampleModule {
     - http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
 
 - 데드락 발생 조건에 대해서 설명해주세요
+    * 한 리소스에 여러 프로세스 중 한 프로세스가 리소스를 점유하고 있으면서 다른 프로세스가 가지고 있는 리소스를 기다리고, 그 리소스를 강제로 빼앗을 수 없으며, 이러한 자원 대기가 순환하고 있을때.
 - 데드락 회피 방법 및 대응 방법에 대해서 설명해주세요
+    * 발생조건을 하나이상 제거, 교착 상태를 일으킨 프로세스를 종료하거나, 할당된 자원을 해제
+    - http://includestdio.tistory.com/12
 - Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
+    * 리소스 소비, 복잡성, 데이터 불일치, 데드락, 실행순서 예측 불가
+    - http://fsd-jinss.tistory.com/82
+    - http://jangsalt.tistory.com/entry/Java-Multi-Thread
+    - http://blog.eomdev.com/java/2016/04/06/Multi-Thread.html (읽어볼것)
 - interface 와 abstract 의 차이 (중복)
 - 오버로딩과 오버라이딩의 차이 (중복)
 - 오버로딩이 제네릭에서 쓰일 때는 어떻게 사용되나요?
@@ -387,7 +411,7 @@ public class SampleModule {
 - Android 시스템 구조
 - Android APK 구조
 - 액티비티나 커스텀뷰로 할 수 있는데 프래그먼트를 쓰는 이유는?
-- Handler / Thread / Looper
+- Handler / Thread / Looper (중복)
 - 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요
 - 인텐트와 인텐트 필터의 개념을 알려주세요
 - 이미지 안드로이드 라이브러리를 무엇을 사용해보았나요?
