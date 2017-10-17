@@ -1,5 +1,7 @@
 ## 2017-10-16
 - Interviews 정리
+### Android
+- copyDependencies
 ## 2017-10-15
 ### etc
 - 인터렉션 디자인의 6가지 원칙
