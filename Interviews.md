@@ -242,8 +242,7 @@ http://platonic.tistory.com/entry/Java-Collections-%EC%9E%90%EB%A3%8C%EA%B5%AC%E
 - HashMap을 사용할 때 주의점은 무엇인가?
     * 속도를 위해 동기화 지원안함. synchronizedMap 이나 ConcurrentHashMap 사용.
 - 프로세스와 스레드에 대해서 설명 (중복)
-- GC 과정에 대해서 설명
-    * 
+- GC 과정에 대해서 설명(아래쪽 참고)
 - 접근지정자에 대해서 설명
     * 
 
@@ -328,11 +327,19 @@ https://opentutorials.org/module/2870/16969
      http://egloos.zum.com/minjang/v/1687021
      http://egloos.zum.com/lefoot/v/5226985
 - 즐겨쓰는 디자인패턴과 이유 (중복)
-- GC 과정을 설명해주세요 (중복)
+- GC 과정을 설명해주세요
+    * 객체가 생성되어 Young 영역에 위치(여기서 발생한 GC는 Minor GC)하고 Young 영역에서 살아남은 객체는 Old 영역으로 이동.(Major GC)
 - GC 알고리즘을 설명해주세요
-    *
+    * Young 영역에서는 Eden 영역과 2개의 Survivor 영역으로 구성되며, 새로 생성한 대부분의 객체는 Eden 영역에 위치, Eden 영역에서 GC가 한 번 발생한 후 살아남은 객체는 Survivor 영역 중 하나로 이동.
+    하나의 Survivor 영역이 가득 차게 되면 그 중에서 살아남은 객체를 다른 Survivor 영역으로 이동하고 가득 찼던 Survivor 영역은 비움.
+    이 과정을 반복하다가 계속해서 살아남아 있는 객체는 Old 영역으로 이동.
+    * Old 영역의 알고리즘은 Serial GC, Parallel GC, Parallel Old GC, CMS GC, G1 GC 등이 있음.
+    - http://d2.naver.com/helloworld/1329
+
 - Dalvik 에서 Art 로 바뀌면서 GC 알고리즘이 변경되었는데 어떻게 변경되었나요?
-    *
+    * mark sweep 단계를 병렬 프로세싱, short-lived 객체 정리를 위해서 신규 Collector 사용, 비트맵 같은 큰 primitive를 분리된 pool에 유지.
+    - https://willowtreeapps.com/ideas/the-android-runtime-the-butter-weve-all-been-waiting-for
+
 - HashTable 을 구현한다면 어떻게 구현하실래요?
     * key, value, hash function, add, remove, 충돌처리방식, resizing
     - http://bcho.tistory.com/1072
@@ -361,7 +368,7 @@ https://opentutorials.org/module/2870/16969
     * Class를 구성하여 객체(Instance)를 생성하는 것을 기본으로 프로그램 로직을 실행하도록 지향하는 프로그래밍.
     - http://vandbt.tistory.com/10
 - 자바의 메모리 구조에 대해서 설명해주세요
-    * 
+    * Method Area, Heap, Stack, PC Register,  Native Method Stack
     - https://joesimong.blogspot.kr/2014/04/java.html
     - http://gbsb.tistory.com/4
     - http://re-build.tistory.com/2
@@ -404,13 +411,28 @@ public class SampleModule {
 - interface 와 abstract 의 차이 (중복)
 - 오버로딩과 오버라이딩의 차이 (중복)
 - 오버로딩이 제네릭에서 쓰일 때는 어떻게 사용되나요?
+    * 제네릭을 쓴다는 건 여러 변수타입에 대한 동일한 동작을 정의하겠다는 이야기인데 오버로딩을 쓴다는 것은 반대되는 행위로 보인다.
+    * 대신 제네릭을 쓰지만 매개변수의 갯수가 다른 오버로딩을 사용하는 것은 의미가 있을 것 같다.
+    - https://m.blog.naver.com/PostView.nhn?blogId=spdlqjdudghl&logNo=220861890940&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+    - http://aroundck.tistory.com/3161
 - 컴파일 타임 오버라이딩 및 런타임 오버라이딩에 대해 설명해주세요
-- Java ITC?
+    * 오버라이딩은 기본적으로 런타임 시간에 바인딩된다.
+    * 그러나 hiding이라고 부르는 static method 오버라이딩은 컴파일 타임에 결정된다.(JVM은 static method의 실제 객체를 찾는 작업을 하지 않는다.)
+    - http://ohgyun.com/242
+- Java IPC?
+    * Linux에서 제공하는 소켓, Pipe 등
+    * Android 바인더
+    - http://d2.naver.com/helloworld/47656
+    - https://junyongs.wordpress.com/2014/01/19/process-%EA%B0%84-%ED%86%B5%EC%8B%A0-%EB%B0%A9%EB%B2%95-inter-process-communication-ipc/
 - Java concurrent package 에 대해서 설명해주세요
 - 어노테이션에 대해서 설명해주세요
+    - http://www.nextree.co.kr/p5864/
 - Android 시스템 구조
+    - http://myembedded.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%A1%B0
 - Android APK 구조
+    - https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
 - 액티비티나 커스텀뷰로 할 수 있는데 프래그먼트를 쓰는 이유는?
+    * 하나의 액티비티에서 여러 view들의 전환을 쉽게 하고 각 view들의 자원을 공유할 수 있다.
 - Handler / Thread / Looper (중복)
 - 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요
 - 인텐트와 인텐트 필터의 개념을 알려주세요
@@ -422,7 +444,7 @@ public class SampleModule {
 - 벡터 이미지 장점 및 사용 방법
 - onPause / onStop 의 차이점
 - 프래그먼트 생명주기를 액티비티와 비교해서 설명
-- 서비스에서 startService 와 bindService 를 사용하는데, bindService 를 쓰는 경-  언제인가요?
+- 서비스에서 startService 와 bindService 를 사용하는데, bindService 를 쓰는 경우는 언제인가요?
 - Kotlin 의 특징에 대해서 알려주세요
 - Dalvik 과 Art 의 차이에 대해서 알려주세요
 - NDK 의 개념
