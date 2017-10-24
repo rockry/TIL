@@ -12,6 +12,7 @@ https://opentutorials.org/module/2870/16572
 * 하나의 프로세스에서 여러개의 스레드가 수행될 수 있습니다.
 ## 프로세스는 어떠한 영역을 공유하고 스레드는 어떤 영역을 공유하나요.
 * 프로세스는 프로세스마다 고유의 코드, 데이터, 스택, 힙 영역을 가지고 있으며, 스레드는 고유의 스택영역을 가지고 있고, 나머지 영역을 공유 합니다.
+* 프로세스에서 데이터를 공유하려면 shared memory 등을 씁니다.
 ## 디자인패턴을 알고 있는대로 알려주세요
 - https://www.slideshare.net/jinhwason/ss-60227208
 * singleton, factory, adapter, facade, decorator, proxy, strategy, iterator, observer
@@ -65,7 +66,8 @@ https://opentutorials.org/module/2870/16572
     }
 ```
 - https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
-    interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
+
+- interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
 ```java
 public class SampleModule {
     interface Holder {
@@ -231,8 +233,8 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 
 ## 오버로딩과 오버라이딩에 대해서 설명 (중복)
 ## 리플렉션에 대해 설명
-* 구체렉션에 클래스 타입을 알지 못해도, 컴파일된 바이트 코드를 통해 역으로 클래스 정보를 * 구내어클래스를 사용할 수 있는 기법.
-알아내http://hiddenviewer.tistory.com/114
+* 구체적인 클래스 타입을 알지 못해도, 컴파일된 바이트 코드를 통해 역으로 클래스 정보를 알아내어 클래스를 사용할 수 있는 기법.
+- http://hiddenviewer.tistory.com/114
 - http://hiddenviewer.tistory.com/115
 ## Parcelable 에 대해서 설명
 * Parcelable이나 Serializable 인터페이스를 구현한 객체는 intent에 putExtra()로 객체를 넘길수 있다.
