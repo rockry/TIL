@@ -93,12 +93,13 @@ public class SampleModule {
 ## 백그라운드 작업을 할 때, 안드로이드에서는 어떤 방법을 이용할 수 있나요?
 * 컴포넌트 관점에서의 백그라운드 개념으로 서비스를 이용할 수 있고, Task관점에서는 Thread나 AsyncTask 등을 이용할 수 있습니다.
 ## 백그라운드 스레드에서 바로 Activity Class를 이용할 수 있는 방법?
-* runOnUIThread를 이용할 수 있습니다. 
+* Activity의 runOnUIThread, View클래스 post메소드, Handler의 post.
+- http://openeg.co.kr/m/247
 ## 다이나믹 프로그래밍이란 무엇인가요?
 * 분할정복방법과 접근법은 같으나 memoization 방법을 이용한 cache를 통해 중복된 연산을 제거한 방법 입니다.
 * ex) 피보나치 수열은 f(x) = f(x-1) + f(x-2) 인데, 각각의 f(x)는 중복된 연산을 반복할 수 있기 때문에 cache를 이용하여 기존 계산된 값을 가져와서 계산한다.
 ## 오버로딩과 오버라이딩의 차이점은 무엇인가요?
-* 오버로딩은 동일한 메소드를 매개변수에 차이를 두어 여러 함수를 구현하여 매개변수에 따라 다르게 동작시키는 것을 말하며,
+* 오버로딩은 동일한 이름의 메소드를 매개변수에 차이를 두어 여러 함수를 구현하고 매개변수에 따라 다르게 동작시키는 것을 말하며,
 * 오버라이딩은 자식이 메소드를 재정의하여 부모의 메소드 구현을 사용하지 않거나 추가작업을 하는 것을 말합니다.
 ## 자바와 자바스크립트 외에 어떤 언어를 할 줄 아나요?
 * python, c
@@ -114,7 +115,8 @@ https://opentutorials.org/module/2870/16724
 ## RecyclerView Holder
 * 기존 ListView에서 View의 재사용을 위해서 ViewHolder 개념을 사용하였으나 RecyclerView는 Holder를 강제화 함으로써 성능의 향상을 꾀했다.
 ## 안드로이드 성능 개선 툴
-*  안드로이드 앱 성능개선 작업을 해보지 못했습니다.
+* Systrace, ARO 등. 직접 사용해보진 못했다..
+- http://programmingfbf7290.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0
 ## onTouchEvent 리턴값의 의미 등을 자세히 설명
 * 가장 상위 레이어부터 dispatchTouchEvent가 호출되며, dispatchTouchEvent는 하위레이어dispatchTouchEvent를 호출하고 하위레이어의 터치이벤트 처리결과에 따라 true일 경우 결과를 리턴 false일 경우 자기자신의 이벤트 처리 메소드(onTouch / onTouchEvent)로 이벤트를 보내고 결과를리턴한다.
 * 모든 메서드는 리턴값이 boolean형인데 true일 경우 이벤트를 처리했음을 의미하고, false일 경우이벤트가 처리되지 않았음을 의미한다.
