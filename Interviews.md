@@ -1,7 +1,7 @@
 # N사 전화
 https://opentutorials.org/module/2870/16572
 -	이직 사유
-    * 제조사에서 제품 중심의 개발 프로세스 및 관점하에 SW 개발을 진행했는데, 서비스 관점에서의 SW 개발에 관심이 있었습니다. 개인적으로 서비스 측면에서의 기술적 완성도를 높이는데 한계를 느꼈고, 이직을 통해서 개발자로서 더 성장하고 싶었습니다. 서비스 개발의 전문가들에게 많이 배우고 커뮤니케이션 하면서 기술적인 성장을 이루고 싶었습니다.
+    * 제조회사이다 보니 제품 중심의 개발 프로세스 및 제품위주의 개발을 진행해왔습니다. 그러다보니 SW의 기술적 성장에 한계를 느꼈습니다. 그래서 SW를 전문적으로 개발하고 서비스를 전문적으로 하는 회사에서 서비스 개발 전문가들과 많이 커뮤니케이션하고 배우면서 SW개발자로서 좀 더 성장하고 싶어서 지원하게 됐습니다.
 ## 정렬 알고리즘을 알고 있는대로 말해주세요
 * Insertion, Selection, Bubble, Merge, Quick, Radix
 ## 퀵소트를 말했는데, 해당 정렬 알고리즘을 상세히 설명해주세요.
@@ -57,30 +57,30 @@ https://opentutorials.org/module/2870/16572
 ## 언급하신 Singleton 은 논란이 있는 부분이 있습니다. 어떤 부분인지 아시나요?
 * Singleton은 멀티스레드 환경에서 동기화 문제가 있습니다. synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
-    private static class InstanceHolder {
+    private static class Holder {
         private static final YourObject instance = new YourObject();
     }
 
     public static YourObject getInstance() {
-        return InstanceHolder.instance;
+        return Holder.instance;
     }
 ```
 - https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
 
 - interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
 ```java
-public class SampleModule {
+public class YourObject {
     interface Holder {
-        SampleModule instance = new SampleModule();
+        YourObject instance = new YourObject();
     }
-    static public SampleModule getInstance() {
+    public static YourObject getInstance() {
         return Holder.instance;
     }
 }
 ```
 - http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
 ## 자신이 UI Driven 인지 Data Driven 인지 어느 쪽에 가깝다고 생각하시나요?
-* UI Driven / 상상하는 것을 현실화 시키는게 좋다.
+* UI Driven / 상상하는 것을 현실화 시키는게 좋고, 시각화된 것이 좋다.
 ## 객체지향의 4대 특징이 무엇인가요?
 * 추상화, 캡슐화, 다형성, 상속성
 ## 각각에 대해서 예를 들어 자세히 설명해주세요
@@ -96,11 +96,11 @@ public class SampleModule {
 * Activity의 runOnUIThread, View클래스 post메소드, Handler의 post.
 - http://openeg.co.kr/m/247
 ## 다이나믹 프로그래밍이란 무엇인가요?
-* 분할정복방법과 접근법은 같으나 memoization 방법을 이용한 cache를 통해 중복된 연산을 제거한 방법 입니다.
+* 분할정복방법과 접근법은 같지만 memoization이라고 지칭하는 cache를 통해서 중복된 연산을 제거한 방법 입니다.
 * ex) 피보나치 수열은 f(x) = f(x-1) + f(x-2) 인데, 각각의 f(x)는 중복된 연산을 반복할 수 있기 때문에 cache를 이용하여 기존 계산된 값을 가져와서 계산한다.
 ## 오버로딩과 오버라이딩의 차이점은 무엇인가요?
-* 오버로딩은 동일한 이름의 메소드를 매개변수에 차이를 두어 여러 함수를 구현하고 매개변수에 따라 다르게 동작시키는 것을 말하며,
-* 오버라이딩은 자식이 메소드를 재정의하여 부모의 메소드 구현을 사용하지 않거나 추가작업을 하는 것을 말합니다.
+* 오버로딩은 동일한 이름의 메소드를 매개변수에 차이를 두어서 여러 함수를 구현하고 매개변수에 따라 다르게 동작시키는 방식을 말하고,
+* 오버라이딩은 부모를 상속받은 자식이 부모의 메소드를 재정의해서 다른 동작을 하거나 기존동작에 추가작업을 하는 방식을 말합니다.
 ## 자바와 자바스크립트 외에 어떤 언어를 할 줄 아나요?
 * python, c
 ## 요즘 관심있는 언어나 분야는 무엇인가요?
@@ -109,6 +109,17 @@ public class SampleModule {
 * 개인 프로젝트
 ## 현재 진행하는 프로젝트 중에 Kotlin 을 이용하거나 진행할 예정이 있나요?
 * 개인적으로 일부분에 사용해보려고 생각 중.
+
+# 전화2
+## RxJava나 EventBus 등에는 능숙한지?
+## Activity View Fragment 설명
+* Activity는 View를 배치할 수 있는 그릇, View는 실제 화면을 표시하는 Component 단위, Fragment는 Activity와 View의 중간 개념으로 View들의 그룹이라고 볼 수 있으며, Activity안에 여러개 위치할 수 있으며, 여러 Activity에서 사용가능하기 때문에 실제 Component 용도로 사용 가능하다.
+## View와 Fragment의 차이점
+* 주요 차이점은 Fragment가 Activity처럼 LifeCycle을 가지고 있다는 점이다.
+* Fragment는 여러 Activity에서 사용가능하도록 한 View 집합이다.
+## apk 구성요소
+* res, raw, native lib, AndroidManifest, classes.dex 등
+https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
 
 # N Labs
 https://opentutorials.org/module/2870/16724
@@ -126,7 +137,7 @@ https://opentutorials.org/module/2870/16724
 * 보통 터치다운의 위치에서 20픽셀 이상 이동되면 이벤트를 가로채서 onIterceptTouchEvent 에리턴값을 true 로 한다.
 - https://moka-a.github.io/android/touch-event-transfer/
 ## 구조 개선 시에 사용한 디자인 패턴
-* 디자인패턴을 많이 사용해보지 못했습니다.
+* 가장 많이 사용하는 Singleton. 불필요하게 객체를 생성 삭제를 반복하는 동작을 줄이기 위해서. 전체 시스템에서 동일한 데이터를 공유하고 싶어서.
 ## DB 접근 시 ANR 발생은 어떤 식으로 개선했는가?
 * 쿼리가 복잡하고 데이터가 많은 경우에는 ANR이 발생한다. ANR 방지를 위해 별도의 Thread로 쿼리를 처리해야한다. 별도의 Thead를 쓰기가 번거로움을 방지하기위해 안드로이드에서는 AsyncQueryHandler를 제공해주고 있다.
 - http://www.kmshack.kr/2014/01/db-query%EB%A5%BC-%EB%B3%84%EB%8F%84%EC%9D%98-thread%EB%A1%9C-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0/ 
@@ -218,7 +229,7 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 - http://hackersstudy.tistory.com/26
 - http://platonic.tistory.com/entry/Java-Collections-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-List-Set-Map-Tree-Stack-Iterator-Enumeration
 ## 동기화 방법에 대해 설명
-* 블록 synchronized, 메소드 synchronized, volatile, ConcurrentUtils
+* 블록 synchronized, 메소드 synchronized, volatile, ConcurrentUtils의 Concurrent Collection들
 - https://okky.kr/article/279692
 - http://ooz.co.kr/71
 ## HashMap을 사용할 때 주의점은 무엇인가?

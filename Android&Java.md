@@ -4,6 +4,9 @@
 # 안드로이드 액티비티 생명주기 
 ![안드로이드 액티비티 생명주기](./images/액티비티생명주기.jpg "Lifecycle of Activity in Android")
 
+# 안드로이드 Fragment 생명주기
+![안드로이드 Fragment 생명주기](./images/Fragment_LifeCycle.jpg "LifeCycle of Fragment")
+
 # enum 의 장점
 간결한 코드로 인해 개발 및 유지보수가 용이하게 합니다. 
 
