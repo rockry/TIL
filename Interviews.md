@@ -239,10 +239,10 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 ## 접근지정자에 대해서 설명
 | 접근 지정자 | 접근 범위 | 동일 클래스 | 동일 패키지 | 다른 패키지의 자식 클래스 | 다른 패키지 |
 | -- | -- | -- | -- | -- | -- |
-| public | 접근 제한 업음 | O | O | O | O |
-| protected | 동일 패키지와 상속 받은 클래스 내부 | O | O | O |  |
-| default | 동일 패지키 내에서만 | O | O |  | |
 | private | 동일 클래스 내에서만 | O |  |  |  |
+| default | 동일 패지키 내에서만 | O | O |  | |
+| protected | 동일 패키지와 상속 받은 클래스 내부 | O | O | O |  |
+| public | 접근 제한 업음 | O | O | O | O |
 
 ## 오버로딩과 오버라이딩에 대해서 설명 (중복)
 ## 리플렉션에 대해 설명
@@ -388,6 +388,7 @@ public class SampleModule {
 }
 ```
 - http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
+- (고려해볼 사항) https://medium.com/@LIP/singleton%EA%B3%BC-%EC%8A%B5%EA%B4%80%EC%A0%81-%EB%8A%A6%EC%9D%80-%EC%B4%88%EA%B8%B0%ED%99%94-ca94771b398f
 
 ## 데드락 발생 조건에 대해서 설명해주세요
 * 한 리소스에 여러 프로세스 중 한 프로세스가 리소스를 점유하고 있으면서 다른 프로세스가 가지고 있는 리소스를 기다리고, 그 리소스를 강제로 빼앗을 수 없으며, 이러한 자원 대기가 순환하고 있을때.
@@ -423,19 +424,32 @@ public class SampleModule {
 ## Android APK 구조
 - https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
 ## 액티비티나 커스텀뷰로 할 수 있는데 프래그먼트를 쓰는 이유는?
-    * 하나의 액티비티에서 여러 view들의 전환을 쉽게 하고 각 view들의 자원을 공유할 수 있다.
+* 하나의 액티비티에서 여러 view들의 전환을 쉽게 하고 각 view들의 자원을 공유할 수 있다.
 ## Handler / Thread / Looper (중복)
-## 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요
+## 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요 (중복)
+* Thread로 작업 후 runOnUIThread, View클래스 post메소드, Handler / AsyncTask
+- http://openeg.co.kr/m/247
 ## 인텐트와 인텐트 필터의 개념을 알려주세요
+* Intent는 일종의 메시지 객체입니다. 이것을 사용해 다른 앱 구성 요소로부터 작업을 요청할 수 있습니다. Activity 실행, Service 실행, Broadcast 전달.
+* 명시적 인텐트 / 암시적 인텐트
+* 인텐트 필터는 특정 인텐트를 받을지 말지를 정의하는 역할을 수행
+- https://kairo96.gitbooks.io/android/content/ch2.8.html
 ## 이미지 안드로이드 라이브러리를 무엇을 사용해보았나요?
-    * Picasso, Glide
+* Picasso, Glide
 ## 해당 라이브러리를 사용하는 이유는 무엇인가요?
+* 이미지 로드 및 변환이 편하고 cache 신경쓰지 않아도됨.
+* Glide는 gif를 지원.
+- http://gun0912.tistory.com/19
 ## RxJava 란 무엇인가요
+* 끊임없이 요청/변경되는 데이터에 반응하기 위해 나온 Reactive Programming 은 데이터를 처리함에 있어서 비동기적으로 데이터를 처리할 때 효율적으로 할 수 있도록 나온 방법.
+- https://www.gitbook.com/book/zerobrain/what-is-rxjava-in-korean/details
+- https://medium.com/@LIP/rxjava-29cfb3ceb4ca
 ## 안드로이드에서 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 적어주세요
 ## 벡터 이미지 장점 및 사용 방법
 ## onPause / onStop 의 차이점
 ## 프래그먼트 생명주기를 액티비티와 비교해서 설명
 ## 서비스에서 startService 와 bindService 를 사용하는데, bindService 를 쓰는 경우는 언제인가요?
+* Service와 지속적으로 interation해야 할 때.
 ## Kotlin 의 특징에 대해서 알려주세요
 ## Dalvik 과 Art 의 차이에 대해서 알려주세요
 ## NDK 의 개념

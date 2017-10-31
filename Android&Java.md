@@ -7,6 +7,9 @@
 # 안드로이드 Fragment 생명주기
 ![안드로이드 Fragment 생명주기](./images/Fragment_LifeCycle.jpg "LifeCycle of Fragment")
 
+# 서비스 생명주기 
+![서비스생명주기](../images/서비스생명주기.png "서비스생명주기")
+
 # enum 의 장점
 간결한 코드로 인해 개발 및 유지보수가 용이하게 합니다. 
 
@@ -249,6 +252,7 @@ hashCode 의 보편적 계약사항
 앱이 실행 중이지 않을 때 실행되어야 한다면 Service를 이용해야 한다.
 
 Ex) 네트워크 통신,음악재생,I/O 작업등
+http://shnoble.tistory.com/65
  
 # HashMap 자료구조 
 http://d2.naver.com/helloworld/831311
@@ -275,9 +279,6 @@ https://m.blog.naver.com/PostView.nhn?blogId=itperson&logNo=220817680631&proxyRe
 2. 캡슐화 : 데이터 캡슐화를 통해 상태와 행동을 하나의 단위로 묶음. 또는 외부에서 객체의 상태를 변경할 수 없도록 은닉화. 재사용성 올라감.
 3. 상속성 : 부모클래스의 속성과 기능을 상속받아 동일하게 사용.
 4. 다형성 : 동일 요청에 대해 서로 다른 방식으로 응답할 수 있도록 만드는 것
- 
-# 서비스 생명주기 
-![서비스생명주기](../images/서비스생명주기.png "서비스생명주기")
  
 # 서비스에서 Bind 와 Start Service 를 섞어쓰지 않는 이유
 bindService 가 된 상태에서 startService 를 하게 되면 이전(bindService)는 무시되고 새로운 상태로 변경된다.

@@ -1,3 +1,9 @@
+## 2017-10-31
+- EventBus, RxJava
+
+## 2017-10-30
+- Picasso, Glide
+
 ## 2017-10-24
 - Interviews 정리
 
