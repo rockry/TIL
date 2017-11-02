@@ -73,7 +73,7 @@ Event를 받을 곳(ex. Fragment) 에서 Event를 구독하고, Event가 발생�
 ```java
 Subscription s = RxEventBus.getInstance().getObservable()
     .subscribe(
-        o -> Toast.makeText(mContext, (String)o, Toast.LENGTH_SHORT).show(), 
+        o -> Toast.makeText(mContext, (String)o, Toast.LENGTH_SHORT).show(), // 매개변수가 1개인 함수에 바로 변수를 연결시켜줄 때는 this::handleEvent, 와 같이 사용할 수 있다.
         error -> Log.d(TAG, "onError()"), 
         () -> Log.d(TAG, "onCompleted()")
     );
@@ -111,6 +111,14 @@ onNext()만 사용할 수도 있고, onNext()와 onError()만 사용할 수도 �
 s.unsubscribe();
 ```
 
+> RxJava2에서 Subscription이 Disposable로 변경되었다. Disposable.dispose();로 구독을 해제하거나, CompositeDisposable를 이용한다.
+```java
+private final CompositeDisposable disposables = new CompositeDisposable();
+disposables.add('subscribe후 나오는 Disposable');
+disposables.clear(); // 또는 disposables.dispose();
+```
+- https://stackoverflow.com/questions/39203791/how-to-use-compositedisposable-of-rxjava-2
+
 참고로 [RxLifeCycle](https://github.com/trello/RxLifecycle)라는 Library도 있음.
 
 ## 6. 구독한 데이터 가공하기
@@ -143,9 +151,10 @@ Subscription s = RxEventBus.getInstance().getObservable()
 
 스케쥴러는 해당 옵저버블, 오퍼레이터, 서브스크라이버를 어떤 스레드에서 수행할지 결정하는 것입니다.
 
-subscribeOn은 Observable이 동작하는 스케쥴러를 다른 스케쥴러로 지정하여 동작을 변경합니다.
+subsctibeOn()은 observable의 작업을 시작하는 쓰레드를 선택 할 수 있습니다.
+중복해서 적을 경우 가장 마지막에 적힌 스레드에서 시작합니다.
 
-observeOn은 Observable이 Observer에게 알리는 스케쥴러를 다른 스케쥴러로 지정합니다.
+observeOn()은 이후에 나오는 오퍼레이터, subscribe의 스케쥴러를 변경 할 수 있습니다.
 
 ![subscribeOn onserveOn](../images/subscribeOn_onserveOn.jpg)
 
@@ -170,8 +179,25 @@ RxAndroid는 아래와 같은 스케쥴러를 추가합니다.
 안드로이드에 특화된 스케쥴러입니다. 보통은 RxAndroid가 제공하는 AndroidSchedulers.mainThread()와 RxJava가 제공하는 Schedulers.io()를 조합해서 Schedulers.io()에서 수행한 결과를 AndroidSchedulers.mainThread()에서 받아 UI에 반영하는 패턴등이 일반적으로 쓰입니다.
 
 
+## Appendix 1. Flowable
+
+Flowable은 Observable의 Backpressure문제를 해결하기 위해 RxJava2에서 나왔다.
+Backpressure 문제란 병목현상과 같이 발행보다 구독처리가 늦어지면서 data가 쌓여 발생하는 문제이다.
+아래 와 같이 Observable을 .toFlowable()로 변경 가능하다. 
+```java
+Disposable d = RxEventBus.getInstance().getObservable().toFlowable(BackpressureStrategy.LATEST)
+    .map(o -> o + ", Event Received.")
+    .subscribe(
+        s -> Toast.makeText(mContext, (String)s, Toast.LENGTH_SHORT).show(), 
+        error -> Log.d(TAG, "onError()")
+    );
+```
+
 <출처>
 - http://developer88.tistory.com/128
 - http://blog.fobid.me/2
 - https://academy.realm.io/kr/posts/mobilization-hugo-visser-rxjava-for-rest-of-us/
 - https://academy.realm.io/kr/posts/rxandroid2/
+- http://tiii.tistory.com/18
+
+- https://blog.mindorks.com/understanding-rxjava-subject-publish-replay-behavior-and-async-subject-224d663d452f

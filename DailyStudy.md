@@ -1,5 +1,12 @@
+## 2017-11-02
+- RxJava2 추가
+
+## 2017-11-01
+- RxJava2 : Disposable, Flowable, Subject ([link](./Android/EventBus&RxJava.md))
+- Android : [FlavorDimension](https://academy.realm.io/kr/posts/gdg-seoul-flavordimension/)
+
 ## 2017-10-31
-- EventBus, RxJava
+- EventBus, RxJava ([link](./Android/EventBus&RxJava.md))
 
 ## 2017-10-30
 - Picasso, Glide
