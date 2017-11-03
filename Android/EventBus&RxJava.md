@@ -198,6 +198,6 @@ Disposable d = RxEventBus.getInstance().getObservable().toFlowable(BackpressureS
 - http://blog.fobid.me/2
 - https://academy.realm.io/kr/posts/mobilization-hugo-visser-rxjava-for-rest-of-us/
 - https://academy.realm.io/kr/posts/rxandroid2/
-- http://tiii.tistory.com/18
+- http://tiii.tistory.com/18 (스케쥴링)
 
-- https://blog.mindorks.com/understanding-rxjava-subject-publish-replay-behavior-and-async-subject-224d663d452f
+- https://blog.mindorks.com/understanding-rxjava-subject-publish-replay-behavior-and-async-subject-224d663d452f (Subject)
