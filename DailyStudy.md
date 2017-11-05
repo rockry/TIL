@@ -1,3 +1,9 @@
+## 2017-11-05
+- git rebase와 fetch
+- fragment간 통신
+- RxJava Hot Observable과 Cold Observable
+- Dagger2
+
 ## 2017-11-02
 - RxJava2 추가
 
@@ -42,7 +48,7 @@
 ### Java & Android
 - HashMap vs HashTable update
 - Floyd's Cycle-Finding Algorithm(tortoise and hare 알고리즘)
-- 왜 java에서 static의 사용을 지양해야 하는가?http://tech.thegajago.com/2016/02/20/%EC%99%9C-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-static%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%A7%80%EC%96%91%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80/
+- 왜 java에서 static의 사용을 지양해야 하는가?http://tech.thegajago.com/2016/02/20/%EC%99%9C-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-static%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%A7%80%EC%96%91%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80/ : 상태를 가질 필요가 없는 메소드들을 static으로 사용하는 것은 괜찮다고 생각함. 대신 그 클래스는 static하게 사용할 수 있는 메소드들만 모아 놓는게 좋다고 생각함.(ex. UtilityManager, Logger 등)
 - Singleton 패턴
 
 ## 2017-09-28

@@ -339,7 +339,7 @@ https://opentutorials.org/module/2870/16969
 * access time이 상수시간(검색이 빠름), 삽입/삭제 쉬움
 ## 아시는 Sort 알고리즘 모두 설명해주세요
 * Bubble, Selection, Insertion, Quick, Radix, Merge, Heap
-* Bubble : 0~n까지 두수를 비교하여 위치를 교환하는 방식으로 가장 큰 수를 고른 후, n번반복하여 정렬하는 방식. O(n2)
+* Bubble : 0~n까지 두수를 비교하여 위치를 교환하는 방식으로 가장 큰 수를 고른 후, n번 반복하여 정렬하는 방식. O(n2)
 * Selection : 0~n까지 탐색하여 가장 큰 수(또는 작은수)를 n번 선택하는 방식.  O(n2)
 * Insertion : 정렬된 배열을 만들어가며, 원소를 하나씩 추가하여 적절한 위치에 삽입하는 방식. (n2). 이미 정렬되어있을 경우 최고!
 * Quick : 연속적인 분할에 의한 정렬. pivot을 중심으로 pivot보다 작은수와 큰수를 나누어가며logn번 반복하는 방식. O(nlogn). 피벗선택을 잘못할 경우 O(n2) 됨.
@@ -470,6 +470,11 @@ public class SampleModule {
 - mearsure&layout, style&theme, appcompat
 - eventbus, volley, realm, sqlite
 - bitmap 로딩 및 운용방법
+
+## Dagger
+* Dependency Injection 라이브러리 : 'new'를 사용해 모듈내에서 다른 모듈을 초기화하지 않고, 객체 생성은 다른 곳에서 하고 생성된 객체를 참조만 하는 방법. (쉽게 생각해서 Sigleton 집합?)
+
+- http://imcreator.tistory.com/106
 
 # SK TechX
 1.	Java Collection Framework 에 대해서 설명하라

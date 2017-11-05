@@ -54,7 +54,12 @@ patch -p1 < patchfile # 패치 적용
 ```
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
-
 git config --global --edit으로 들어가서 직접 수정해도 된다.
+이제 git lg 하면 보기편하게 git log가 출력 된다.
 
-[https://coderwall.com/p/euwpig/a-better-git-log](https://coderwall.com/p/euwpig/a-better-git-log)
+[출처](https://coderwall.com/p/euwpig/a-better-git-log)
+
+
+> ### 기본적인 git 사용방법 및 개념은 아래 두개의 사이트만 읽어보면 많은 도움이 된다.
+- https://backlog.com/git-tutorial/kr/
+- https://git-scm.com/book/ko/v2/
