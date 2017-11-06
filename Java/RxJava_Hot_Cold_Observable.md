@@ -117,8 +117,59 @@ System.out.println("연산횟수 : " + count.count());
 
 ## Hot Observable의 stream을 무한히 유지하기
 
-전에 RxJava를 이용해서 EventBus를 만들어 사용하였다.
+이전에 RxJava를 이용해서 EventBus를 만들어 사용하였다.
 그런데 Exception이 발생하면 stream이 종료되고 더이상 이벤트를 전달할 수 없는 쓸모없는 EventBus가 되었다.
-그래서 Exception이 발생해도 Observable의 stream을 계속 유지할 수 있는 방법을 찾아보았고, 아래 stackoverflow에서 해결책을 찾았다.
-다른 더 좋은 방법이 있는지도 모르겠다.
+그래서 Exception이 발생해도 Observable의 stream을 계속 유지할 수 있는 방법을 찾아보았다.
+
+내가 하고자 하는 일은 state를 구독하고 state변경이 일어날때마다 handleStateChanged(state)를 호출해서 여러가지 동작(UI 조작 포함)을 하도록 하는 것이었다.
+.observeOn(AndroidSchedulers.mainThread()) 를 빼고 하니 Exception이 발생했고, stream을 유지할 수 없었다.
+
+retry(), onError...()구문, flatMap 사용, RxReplay, 이중 stream 유지하기까지 이것저것 다 적용해 보았지만 내가 만든 구조에서는 동작하지 않았다.
+```java
+        disposables.add(mRobotStateMachine.getRelay()
+                .toFlowable(BackpressureStrategy.LATEST) //Backpressure처리를 위해 Observable을 Flowable로 변경
+                .subscribeOn(Schedulers.computation())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .flatMap(state -> {
+//                    Log.d(TAG, "flatMap process");
+//                    return Flowable.just(state)
+//                            .onErrorReturnItem(RobotStateMachine.ENVIRONMENT_CONCENTRATION_MODE)
+//                            .onErrorResumeNext(Flowable.just(state))
+//                            .onExceptionResumeNext(Flowable.just(state));
+//                })
+//                .onErrorReturnItem(RobotStateMachine.ENVIRONMENT_CONCENTRATION_MODE)
+//                .onErrorResumeNext(Flowable.just(RobotStateMachine.ENVIRONMENT_CONCENTRATION_MODE))
+//                .onExceptionResumeNext(Flowable.just(RobotStateMachine.ENVIRONMENT_CONCENTRATION_MODE))
+//                .retry()
+                .subscribe(
+                       this::handleStateChanged //state -> handleStateChanged(state) 와 동일한 문법
+                       error -> {
+                           Log.d(TAG, "mRobotStateMachine onError() : " + error);
+                           mLGVoiceActivationManager.startVoiceActivation();
+                       },
+                       () -> Log.d(TAG, "mRobotStateMachine onCompleted()")
+                )
+        );
+```
+
+결국 가장 simple한 방법으로 Exception이 발생가능한 곳에 try/catch 하는 것으로 일단락 되었다--;
+```java
+        disposables.add(mRobotStateMachine.getRelay()
+                .toFlowable(BackpressureStrategy.LATEST) //Backpressure처리를 위해 Observable을 Flowable로 변경
+                .subscribeOn(Schedulers.computation())
+//                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(state -> {
+                    try {
+                        handleStateChanged(state);
+                    } catch(Exception e) {
+                        Log.d(TAG, "handleStateChanged Exception : " + e);
+                    }
+                }
+                )
+        );
+```
+
 - https://stackoverflow.com/questions/28969995/how-to-ignore-error-and-continue-infinite-stream/28971140#28971140
+- https://www.google.co.kr/search?q=RxJava+infinite+stream&oq=RxJava+infinite+stream&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8
+- https://github.com/JakeWharton/RxRelay
+- https://github.com/ReactiveX/RxJava/issues/3870
