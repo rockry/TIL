@@ -10,28 +10,32 @@ Subject도 ReplaySubject등을 통해서 모든 데이터를 전부 전달받을
 Cold Observable은 정해진 데이터를 모두 사용할 경우 그 stream은 종료 된다.
 
 Observable A와 subscriber1,2,3이 있다고 하면,
-<Hot Observable>
+> Hot Observable
 
+```
     A
   / | \
 s1  s2 s3
+```
 
 A는 subscribe하는 시점에 데이터를 가지고 있지 않고, 실시간으로 원하는 시점에 데이터를 방출.
 A가 방출하는 데이터를 1,2,3이 동시에 소비 (구독하는 시점에 따라서 나중에 구독한 Observer는 받지 못하는 데이터가 있을 수 있다.)
 A가 종료되면 1,2,3 모두 종료
 
-<Cold Obervable>
+>Cold Obervable
 
+```
   A  A  A
   |  |  |
   s1 s2 s3
-  
+```
+
 A는 subscribe하는 시점에 구독해야하는 데이터가 정해져있음.
 1,2,3이 각각 A를 구독하며, 모두 동일한 데이터를 소비하고 각자 종료한다.
 
 소스로 보면,
 
-<Hot Observable>
+>Hot Observable
 
 ```java
 
@@ -76,7 +80,7 @@ System.out.println("연산횟수 : " + count.count());
 
 ```
 
-<Cold Observable>
+>Cold Observable
 
 ```java
 
@@ -182,6 +186,7 @@ retry(), onError...()구문, flatMap 사용, RxReplay, 이중 stream 유지하�
         );
 ```
 
+참조 :
 - https://stackoverflow.com/questions/28969995/how-to-ignore-error-and-continue-infinite-stream/28971140#28971140
 - https://www.google.co.kr/search?q=RxJava+infinite+stream&oq=RxJava+infinite+stream&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8
 - https://github.com/JakeWharton/RxRelay
