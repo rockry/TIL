@@ -14,6 +14,7 @@ Observable A와 subscriber1,2,3이 있다고 하면,
     A
   / | \
 s1  s2 s3
+A는 subscribe하는 시점에 데이터를 가지고 있지 않고, 실시간으로 원하는 시점에 데이터를 방출.
 A가 방출하는 데이터를 1,2,3이 동시에 소비 (구독하는 시점에 따라서 나중에 구독한 Observer는 받지 못하는 데이터가 있을 수 있다.)
 A가 종료되면 1,2,3 모두 종료
 
@@ -21,12 +22,15 @@ A가 종료되면 1,2,3 모두 종료
   A  A  A
   |  |  |
   s1 s2 s3
+A는 subscribe하는 시점에 구독해야하는 데이터가 정해져있음.
 1,2,3이 각각 A를 구독하며, 모두 동일한 데이터를 소비하고 각자 종료한다.
 
 소스로 보면,
 
 <Hot Observable>
+
 ```java
+
 PublishSubject<Integer> publishSubject = PublishSubject.create();
 
 Observable<String> observableA = publishSubject
@@ -65,10 +69,13 @@ System.out.println("연산횟수 : " + count.count());
     subscriber2 : [4] 1466583114892
     연산횟수 : 4
 */
+
 ```
 
 <Cold Observable>
+
 ```java
+
 Observable<String> observableA = Observable
     .range(0, 4)
     .timestamp()
@@ -108,6 +115,7 @@ System.out.println("연산횟수 : " + count.count());
     subscriber2 : [3] 1466581248159
     연산횟수 : 8
 */
+
 ```
 
 - https://moka-a.github.io/android/rxAndroid_study/
@@ -125,6 +133,7 @@ System.out.println("연산횟수 : " + count.count());
 .observeOn(AndroidSchedulers.mainThread()) 를 빼고 하니 Exception이 발생했고, stream을 유지할 수 없었다.
 
 retry(), onError...()구문, flatMap 사용, RxReplay, 이중 stream 유지하기까지 이것저것 다 적용해 보았지만 내가 만든 구조에서는 동작하지 않았다.
+
 ```java
         disposables.add(mRobotStateMachine.getRelay()
                 .toFlowable(BackpressureStrategy.LATEST) //Backpressure처리를 위해 Observable을 Flowable로 변경
