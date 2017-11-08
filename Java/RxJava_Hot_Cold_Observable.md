@@ -11,17 +11,21 @@ Cold Observable은 정해진 데이터를 모두 사용할 경우 그 stream은 
 
 Observable A와 subscriber1,2,3이 있다고 하면,
 <Hot Observable>
+
     A
   / | \
 s1  s2 s3
+
 A는 subscribe하는 시점에 데이터를 가지고 있지 않고, 실시간으로 원하는 시점에 데이터를 방출.
 A가 방출하는 데이터를 1,2,3이 동시에 소비 (구독하는 시점에 따라서 나중에 구독한 Observer는 받지 못하는 데이터가 있을 수 있다.)
 A가 종료되면 1,2,3 모두 종료
 
 <Cold Obervable>
+
   A  A  A
   |  |  |
   s1 s2 s3
+  
 A는 subscribe하는 시점에 구독해야하는 데이터가 정해져있음.
 1,2,3이 각각 A를 구독하며, 모두 동일한 데이터를 소비하고 각자 종료한다.
 
