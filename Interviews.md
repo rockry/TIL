@@ -5,8 +5,8 @@ https://opentutorials.org/module/2870/16572
 ## 정렬 알고리즘을 알고 있는대로 말해주세요
 * Insertion, Selection, Bubble, Merge, Quick, Radix
 ## 퀵소트를 말했는데, 해당 정렬 알고리즘을 상세히 설명해주세요.
-* 피벗을 중심으로 피벗보다 작은 수와 큰 수를 양쪽으로 나누는 연산을 반복하여 분할정복을사용합니다.
-* 1/2로 나누는 방식으로 n번씩 비교를 하기때문에 O(nlogn) 시간복잡도(time complexity)를 가집니다.
+* 피벗을 중심으로 피벗보다 작은 수와 큰 수를 양쪽으로 나누는 연산을 반복하는 분할정복을 사용하여 정렬하는 방식입니다.
+* 1/2로 나누는 방식을 n번씩 비교를 하기때문에(비교할 대상이 1/2씩 감소) O(nlogn) 시간복잡도(time complexity)를 가집니다.
 ## 프로세스와 스레드의 차이는 무엇입니까?
 * 프로세스는 프로그램의 실행단위이고 스레드는 그 프로그램의 Task당 실행단위 입니다.
 * 하나의 프로세스에서 여러개의 스레드가 수행될 수 있습니다.
@@ -318,9 +318,38 @@ https://opentutorials.org/module/2870/16969
 - http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
 - http://kiwi99.tistory.com/21
 ## quicksort 손코딩
-* 
+```java
+    int partition(int arr[], int left, int right) {
+          int i = left, j = right;
+          int pivot = arr[(left + right) / 2];
+          int tmp;
+          
+          while (i <= j) {
+                while (arr[i] < pivot) i++;
+                while (arr[j] > pivot) j--;
+                if (i <= j) {
+                      tmp = arr[i];
+                      arr[i] = arr[j];
+                      arr[j] = tmp;
+                      i++;
+                      j--;
+                }
+          };
+         
+          return i;
+    }
+     
+    void quickSort(int arr[], int left, int right) {
+          int index = partition(arr, left, right);
+          if (left < index - 1)
+                quickSort(arr, left, index - 1);
+          if (index < right)
+                quickSort(arr, index, right);
+    }
+```
 ## quicksort 알고리즘 과정 그림으로 설명 (화이트보드)
-* 
+![퀵소트](images/QuickSort.jpg)
+
 ## Circular List 와 일반 Linked List 구분하는 법은?
 * Floyd's Cycle-Finding Algorithm
 * 러너 기법이라고도하며, 속도가 다른 2개의 임시 Node를 가지고 list traversal하면Circular일 경우 빠른 Node가 느린 Node를 따라잡도록 만드는 방법.
@@ -506,3 +535,19 @@ public class SampleModule {
 17.	배열과 ArrayList 의 차이점 (ArrayList 는 어떻게 메모리를 할당하나?)
 18.	Linked List 와 Array List 의 차이점
 19.	Weak Reference 와 Strong Reference 에 대해 설명하라  
+
+# 추가
+## 피보나치 수열 손코딩
+## String reverse 손코딩
+## Android TextView에서 특정부분만 Color 바꾸기 직접코딩(Spannable)
+## Android Broadcast Receiver - Activity 간 연동 직접 코딩
+## Service - Activity 연동 손코딩
+## Video/Audio App 개발시 Activity 생명주기
+## 개발하며 가장 어려웠던 점은? 해결 방법은?
+## Doze 모드 설명
+## 관심있는 Android 기술이 있나요? 설명해보세요.
+## 자사 서비스를 이용해 개발하고 싶은 프로그램이 있나요?
+## 어떤 개발자가 되고 싶은가요?
+## Java NIO란?
+## 자신있는 Android 기술
+
