@@ -65,9 +65,19 @@ https://opentutorials.org/module/2870/16572
         return Holder.instance;
     }
 ```
+* enum을 이용한 singleton 구현도 가능 합니다.
+```java
+public enum Singleton {
+    INSTANCE;
+    public void myMethod(){  
+    }
+}
+
+Singleton.INSTANCE.myMethod();
+```
 - https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
 
-- interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
+* interface 로컬변수는 무조건 public static final 이고 생략 가능하기 때문에, interface Holder를 이용해 아래와 같이 활용 가능하다.
 ```java
 public class YourObject {
     interface Holder {
