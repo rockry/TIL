@@ -4,6 +4,8 @@ https://opentutorials.org/module/2870/16572
 
 ## 정렬 알고리즘을 알고 있는대로 말해주세요
 * Insertion, Selection, Bubble, Merge, Quick, Radix
+> https://medium.com/@fiv3star/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-sorting-algorithm-%EC%A0%95%EB%A6%AC-8ca307269dc7
+> https://opentutorials.org/course/543/5364
 ## 퀵소트를 말했는데, 해당 정렬 알고리즘을 상세히 설명해주세요.
 * 피벗을 중심으로 피벗보다 작은 수와 큰 수를 양쪽으로 나누는 연산을 반복하는 분할정복을 사용하여 정렬하는 방식입니다.
 * 1/2로 나누는 방식을 n번씩 비교를 하기때문에(비교할 대상이 1/2씩 감소) O(nlogn) 시간복잡도(time complexity)를 가집니다.
@@ -14,11 +16,12 @@ https://opentutorials.org/module/2870/16572
 * 프로세스는 프로세스마다 고유의 코드, 데이터, 스택, 힙 영역을 가지고 있으며, 스레드는 고유의 스택영역을 가지고 있고, 나머지 영역을 공유 합니다.
 * 프로세스에서 데이터를 공유하려면 shared memory 등을 씁니다.
 ## 디자인패턴을 알고 있는대로 알려주세요
-- https://www.slideshare.net/jinhwason/ss-60227208
+> https://www.slideshare.net/jinhwason/ss-60227208
+> https://blog.seotory.com/categories/dev/java/
 * singleton, factory, adapter, facade, decorator, proxy, strategy, iterator, observer
--http://gyrfalcon.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4-%EC%A0%5%EB%A6%AC
-- http://hyeonstorage.tistory.com/99
-- http://supark7.tistory.com/
+> http://gyrfalcon.tistory.com/category/Language/Design%20Pattern
+> http://hyeonstorage.tistory.com/99
+> http://supark7.tistory.com/
 
 | 생성패턴 | 객체의 생성방식을 결정하는 패턴 |
 | --------- | --------- |
@@ -50,10 +53,11 @@ https://opentutorials.org/module/2870/16572
 * strategy : 동작을 위한 인터페이스를 다양한 동작에 맞게 구현. Shooter interface를 SoccerShooter / BasketballShooter 에서 각각의 동작 구현.
 * iterator : 리스트 iterator
 * observer : 방송을하는 주체가 있고 각 observer는 방송을 listen한다. A.register, B.register 후 방송국.update 하면 A와 B 각각의 update가 호출되어 방송국의 update를 들을 수 있다.
-- https://www.slideshare.net/soomong/pattern-4797069
-- http://huiyu.tistory.com/category/Programming/DesignPatterns
-- http://copynull.tistory.com/category/Gof%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4?page=2
-- https://gist.github.com/dwpark1112/a164d1cdc4d1c771b0972080f616394c
+> https://www.slideshare.net/soomong/pattern-4797069 (이미지로 Pattern 연상법)
+> http://huiyu.tistory.com/category/Programming/DesignPatterns
+> http://copynull.tistory.com/category/Gof%20%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4?page=2
+> https://gist.github.com/dwpark1112/a164d1cdc4d1c771b0972080f616394c
+
 ## 언급하신 Singleton 은 논란이 있는 부분이 있습니다. 어떤 부분인지 아시나요?
 * Singleton은 멀티스레드 환경에서 동기화 문제가 있습니다. synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
@@ -75,7 +79,7 @@ public enum Singleton {
 
 Singleton.INSTANCE.myMethod();
 ```
-- https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
+> https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
 
 * interface 로컬변수는 무조건 public static final 이고 생략 가능하기 때문에, interface Holder를 이용해 아래와 같이 활용 가능하다.
 ```java
@@ -88,7 +92,7 @@ public class YourObject {
     }
 }
 ```
-- http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
+> http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
 ## 자신이 UI Driven 인지 Data Driven 인지 어느 쪽에 가깝다고 생각하시나요?
 * UI Driven / 상상하는 것을 현실화 시키는게 좋고, 시각화된 것이 좋다.
 ## 객체지향의 4대 특징이 무엇인가요?
@@ -104,19 +108,19 @@ public class YourObject {
 * 컴포넌트 관점에서의 백그라운드 개념으로 서비스를 이용할 수 있고, Task관점에서는 Thread나 AsyncTask 등을 이용할 수 있습니다.
 ## 백그라운드 스레드에서 바로 Activity Class를 이용할 수 있는 방법?
 * Activity의 runOnUIThread, View클래스 post메소드, Handler의 post.
-- http://openeg.co.kr/m/247
+> http://openeg.co.kr/m/247
 ## 다이나믹 프로그래밍이란 무엇인가요?
 * 분할정복방법과 접근법은 같지만 memoization이라고 지칭하는 cache를 통해서 중복된 연산을 제거한 방법 입니다.
 * ex) 피보나치 수열은 f(x) = f(x-1) + f(x-2) 인데, 각각의 f(x)는 중복된 연산을 반복할 수 있기 때문에 cache를 이용하여 기존 계산된 값을 가져와서 계산한다.
-## 오버로딩과 오버라이딩의 차이점은 무엇인가요?
+## 오버로딩(Overloading)과 오버라이딩(Overriding)의 차이점은 무엇인가요?
 * 오버로딩은 동일한 이름의 메소드를 매개변수에 차이를 두어서 여러 함수를 구현하고 매개변수에 따라 다르게 동작시키는 방식을 말하고,
 * 오버라이딩은 부모를 상속받은 자식이 부모의 메소드를 재정의해서 다른 동작을 하거나 기존동작에 추가작업을 하는 방식을 말합니다.
 ## 자바와 자바스크립트 외에 어떤 언어를 할 줄 아나요?
 * python, c
 ## 요즘 관심있는 언어나 분야는 무엇인가요?
-* Rx, 함수형 프로그래밍 등
+* Rx, 함수형 프로그래밍, kotlin 등
 ## Github 사용하시나요, 사용하시면 어떤 프로젝트를 진행했나요?
-* 개인 프로젝트
+* 개인 프로젝트나 지식 정리 용도
 ## 현재 진행하는 프로젝트 중에 Kotlin 을 이용하거나 진행할 예정이 있나요?
 * 개인적으로 일부분에 사용해보려고 생각 중.
 
@@ -129,28 +133,29 @@ public class YourObject {
 * Fragment는 여러 Activity에서 사용가능하도록 한 View 집합이다.
 ## apk 구성요소
 * res, raw, native lib, AndroidManifest, classes.dex 등
-https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
+> https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
 
 # N Labs
 https://opentutorials.org/module/2870/16724
 ## RecyclerView Holder
 * 기존 ListView에서 View의 재사용을 위해서 ViewHolder 개념을 사용하였으나 RecyclerView는 Holder를 강제화 함으로써 성능의 향상을 꾀했다.
 ## 안드로이드 성능 개선 툴
-* Systrace, ARO 등. 직접 사용해보진 못했다..
-- http://programmingfbf7290.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0
+* Systrace, LeakCanary, stetho 등. 직접 사용해보진 못했다..
+> http://programmingfbf7290.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0
+> https://academy.realm.io/kr/posts/tools-and-libraries-for-common-android-problems/
 ## onTouchEvent 리턴값의 의미 등을 자세히 설명
-* 가장 상위 레이어부터 dispatchTouchEvent가 호출되며, dispatchTouchEvent는 하위레이어dispatchTouchEvent를 호출하고 하위레이어의 터치이벤트 처리결과에 따라 true일 경우 결과를 리턴 false일 경우 자기자신의 이벤트 처리 메소드(onTouch / onTouchEvent)로 이벤트를 보내고 결과를리턴한다.
+* 가장 상위 레이어부터 dispatchTouchEvent가 호출되며, dispatchTouchEvent는 하위레이어 dispatchTouchEvent를 호출하고 하위레이어의 터치이벤트 처리결과에 따라 true일 경우 결과를 리턴 false일 경우 자기자신의 이벤트 처리 메소드(onTouch / onTouchEvent)로 이벤트를 보내고 결과를 리턴한다.
 * 모든 메서드는 리턴값이 boolean형인데 true일 경우 이벤트를 처리했음을 의미하고, false일 경우이벤트가 처리되지 않았음을 의미한다.
-- http://dktfrmaster.blogspot.kr/2016/09/blog-post_26.html
+> http://dktfrmaster.blogspot.kr/2016/09/blog-post_26.html
 ## onInterceptTouch 리턴값의 의미를 자세히 설명
 * onInterceptTouchEvent는 ViewGroup의 dispatchTouchEvent의 로직을 대신 담당하여, 자신에게속한 하위뷰의 이벤트를 가로챌지 결정한다.
-* 보통 터치다운의 위치에서 20픽셀 이상 이동되면 이벤트를 가로채서 onIterceptTouchEvent 에리턴값을 true 로 한다.
-- https://moka-a.github.io/android/touch-event-transfer/
+* 보통 터치다운의 위치에서 20픽셀 이상 이동되면 이벤트를 가로채서 onIterceptTouchEvent 에 리턴값을 true 로 한다.
+> https://moka-a.github.io/android/touch-event-transfer/
 ## 구조 개선 시에 사용한 디자인 패턴
-* 가장 많이 사용하는 Singleton. 불필요하게 객체를 생성 삭제를 반복하는 동작을 줄이기 위해서. 전체 시스템에서 동일한 데이터를 공유하고 싶어서.
+* 가장 많이 사용하는 Singleton. 불필요하게 객체를 생성 삭제를 반복하는 동작을 줄이기 위해서. 전체 시스템에서 동일한 데이터를 공유하고 싶어서. state 패턴.
 ## DB 접근 시 ANR 발생은 어떤 식으로 개선했는가?
 * 쿼리가 복잡하고 데이터가 많은 경우에는 ANR이 발생한다. ANR 방지를 위해 별도의 Thread로 쿼리를 처리해야한다. 별도의 Thead를 쓰기가 번거로움을 방지하기위해 안드로이드에서는 AsyncQueryHandler를 제공해주고 있다.
-- http://www.kmshack.kr/2014/01/db-query%EB%A5%BC-%EB%B3%84%EB%8F%84%EC%9D%98-thread%EB%A1%9C-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0/ 
+> http://www.kmshack.kr/2014/01/db-query%EB%A5%BC-%EB%B3%84%EB%8F%84%EC%9D%98-thread%EB%A1%9C-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0/ 
 ## Handler, Looper, HandleMessage 의미
 * 안드로이드에서는 UI 처리의 동기화를 위해서 Main Thread에서만 UI작업이 가능하도록 제한했습니다. 이 동기화를 위한 개념이 Handler와 Looper, HandleMessage 입니다.
 * Hanlder는 Handler를 생성한 Thread에서 이벤트를 처리하기 위해 대기하며, 이 이벤트를 전달하기위해 내부 Queue를 가지고 있는 Looper가 존재합니다.
@@ -158,30 +163,30 @@ https://opentutorials.org/module/2870/16724
 * Main Thread로 이벤트를 던지고 싶은 다른 Thread들은 Main Thread의 Handler 객체의sendMessage나 post를 통해서 Main Thread로 이벤트를 던집니다.
 * Looper.prepare( )를 통해 messageQueue를 준비 한 후, Looper.loop( )를 호출함으로서Message 전달을 기다리는 작업이 시작되게 됩니다. Main Thread는 Looper를 기본적으로 가지고있습니다.
 * Main Thread외의 Thread에서 핸들러를 사용할때, HandlerThread 클래스는 기본적으로 Looper를가지고 있고 해당 Thread를 start 시키면 자동으로 Loop도 도므로 상당히 편리하게 쓸 수 있습니다.
-- http://itmining.tistory.com/5
+> http://itmining.tistory.com/5
 ## Android MutiThread 환경 설명
-- http://openeg.co.kr/247
+> http://openeg.co.kr/247
 ## View 에 대한 전반적인 질문
 ## 성능 개선한 사례에 대한 전반적인 질문
 ## 인터페이스 활용의 장점
 * 개발시간 단축, 표준화 가능, 클래스들에게 관계제공, 각각의 독립적 프로그래밍 가능.
-- http://bywords.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%9E%A5%EC%A0%90
+> http://bywords.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%9E%A5%EC%A0%90
 ## 맵 자료구조 설명
 * Key(키)와 Value(값)으로 나누에 데이터 관리. 순서는 없으며, 키에 대한 중복 없음. 
-* 장점: 빠른 속도, 단점: Key의 검색 속도가 검색 속도를 좌우 
+* 장점: 빠른 속도, 단점: 순서 보장X(LinkedHashMap사용), 리소스 비용 높음.
 * 구현 클래스 : HashMap, TreeMap
-- 자료구조(Java Collections) : http://platonic.tistory.com/entry/Java-Collections-자료구조-List-Set-Map-Tree-Stack-Itertor-Enumeration
+> 자료구조(Java Collections) : http://platonic.tistory.com/entry/Java-Collections-자료구조-List-Set-Map-Tree-Stack-Itertor-Enumeration
 ## HashMap 과 HashTable 의 차이
 * 1) 동기화 : HashTable 제공, HashMap 비제공. But 신규 버전인 HashMap 사용이 권장되고,동기화 필요시 ConccurentHashMap 권장. HashTable은 패치가 안되고 동기화 때문에 성능저하.
 * 2) null값 허용 : HashTable X, HashMap O
 * HashMap은 보조해시함수(Additional Hash Function)사용으로 collision 적음.
 * Java 8에서 HashMap Separate Chaining의 성능 개선 : 개수가 8개까지는 리스트를 사용하고그것을 넘은 경우 트리로 전환. (다시 6개 보다 작아지면 리스트로 전환)
-- http://greatzzo.tistory.com/58
-- http://d2.naver.com/helloworld/831311
+> http://greatzzo.tistory.com/58
+> http://d2.naver.com/helloworld/831311
 ## 안드로이드 맵 자료구조 (ArrayMap 등의 사용법 등)
 * ![Java Collection Framework](./images/JavaCollectionFramework.jpg "Java CollectionFramework")
-- http://hackersstudy.tistory.com/26
-- http://programmingsummaries.tistory.com/57
+> http://hackersstudy.tistory.com/26
+> http://programmingsummaries.tistory.com/57
 ## 전반적인 View, Thread, 성능 개선에 대해 중점적인 추가 질문
 *
     
@@ -189,24 +194,24 @@ https://opentutorials.org/module/2870/16724
 https://opentutorials.org/module/2870/16875
 ## Activity lifecycle -> onStart onResume 차이
 * onCreate -> onStart -> onResume -> onPuase -> onStop -> onDestroy
-* onStart는 Activity가 정지된 상태에서 전면으로 돌아올때 혹은 최초 생성 될때 onCreate 이후에호출(Activity가 비 정상적으로 소멸됬을 경우를 대비해 리소스들을 확인하고 재 할당 등의 작업들을하는것을 권장, receiver 등록이나 state initial)
-* onResume은 Acitivity가 다른 작업에 의해 잠시 onPuase(focus를 잃음)되었다가 다시실행될때마다 호출(onResume 이전에 onActivityResult나 onSaveInstanceState가 불리므로상태값을 가지고 준비과정을 거칠때는 onResume에서 수행이 필요. onStart와는 다르게 focus를 잃은시점에 동작을 멈추고 다시 실행해야하는 작업들을 수행.)
-- https://stackoverflow.com/questions/9934248/android-when-to-use-onstart-onstop
-- https://stackoverflow.com/questions/21302220/what-does-onstart-really-do-android
+* onStart는 최초 생성 될때 onCreate 이후 또는 Activity가 정지된 상태에서 전면으로 돌아올 때 호출(Activity가 비 정상적으로 소멸됬을 경우를 대비해 리소스들을 확인하고 재 할당 등의 작업들을 하는 것을 권장, receiver 등록이나 state initial)
+* onResume은 Acitivity가 다른 작업에 의해 잠시 onPuase(focus를 잃음)되었다가 다시실행될때마다 호출(onResume 이전에 onActivityResult나 onSaveInstanceState가 불리므로 상태값을 가지고 준비과정을 거칠때는 onResume에서 수행이 필요. onStart와는 다르게 focus를 잃은시점에 동작을 멈추고 다시 실행해야하는 작업들을 수행.)
+> https://stackoverflow.com/questions/9934248/android-when-to-use-onstart-onstop
+> https://stackoverflow.com/questions/21302220/what-does-onstart-really-do-android
 ## 디자인패턴 아는 것을 말해보세요 (중복)
 ## AsyncTask 최근 변화
 * 5.1부터 AsyncTask 내부의 Handler가 Singleton으로 변경.
-- http://sjava.net/tag/android-asynctask/
+> http://sjava.net/tag/android-asynctask/
 * 3.2부터는 병렬처리를 위해 .executeOnExecutor(AsyncTask .THREAD_POOL_EXECUTOR, ...); 와 같이 사용해야 함.
-- https://www.android-tech.io/category/%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EB%8B%B4/
+> https://www.android-tech.io/category/%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EB%8B%B4/
 * IO 관련 로직을 UI 레이어에서 처리해야 하는 점, 메인 스레드 외에서는 시작을 할 수 없는 것, 메모리 누수가 일어나기 매우 쉬운점 등을 이유로 RxJava를 사용하는 흐름도 보이고 있다.
-- http://kimjihyok.info/2017/06/02/asynctask%EC%99%80-%EB%B9%84%EA%B5%90%ED%95%B4%EC%84%9C-%EB%8B%B9%EC%8B%A0%EC%9D%B4-rxjava%EB%A5%BC-%EB%8B%B9%EC%9E%A5-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0/
+> http://kimjihyok.info/2017/06/02/asynctask%EC%99%80-%EB%B9%84%EA%B5%90%ED%95%B4%EC%84%9C-%EB%8B%B9%EC%8B%A0%EC%9D%B4-rxjava%EB%A5%BC-%EB%8B%B9%EC%9E%A5-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0/
 ## ListView, RecyclerView 차이와 ConstraintLayout behavior 적용이 왜 안되는지?
 * RecyclerView와 ListView의 가장 큰 차이점은 Layout Manager 추가와, View Holder 패턴의 의무사용, Item에 대한 뷰의 변형이나 애니메이션할 수 있는 개념이 추가된 것 입니다. 
-- http://itmining.tistory.com/12
+> http://itmining.tistory.com/12
 ## 최근 안드로이드 트렌드
 * Kotlin, RxJava, Retrofit2, Dagger2등의 library, MVVM, etc??
-- https://medium.com/@joongwon/%EC%89%B4%EC%83%88-%EC%97%86%EC%9D%B4-%EB%B0%94%EB%80%8C%EA%B3%A0-%EC%9E%88%EB%8A%94-%EA%B0%9C%EB%B0%9C-%ED%8A%B8%EB%A0%8C%EB%93%9C-f18ccad7ed69
+> https://medium.com/@joongwon/%EC%89%B4%EC%83%88-%EC%97%86%EC%9D%B4-%EB%B0%94%EB%80%8C%EA%B3%A0-%EC%9E%88%EB%8A%94-%EA%B0%9C%EB%B0%9C-%ED%8A%B8%EB%A0%8C%EB%93%9C-f18ccad7ed69
 ## Interface 와 Abstract 에 대한 설명
 * Interface는 파생될 클래스들이 구현해야할 공통점들을 모아놓은 객체이고,
 Abstract 클래스는 파생될 클래스들이 variation할 수 있는 abstract method를 가진 클래스
@@ -228,20 +233,20 @@ Abstract 클래스는 파생될 클래스들이 variation할 수 있는 abstract
 implments | extends
 메서드 선언만 가능 | 메서드의 부분적인 구현이 가능
 
-- http://private.tistory.com/20
-- http://silentcargo.tistory.com/76
+> http://private.tistory.com/20
+> http://silentcargo.tistory.com/76
 ## Set, Map, List 에 대해 설명
 | 인터페이스 | 구현 클래스 | 특징 | 
 | --------- | ---------- | ---- |
 List | LinkedList / Stack / Vector /ArrayList | 순서가 있는 데이터의 집합, 데이터의 중복을허용한다.
 Set | HashSet / TreeSet | 순서가 없는 데이터의 집합, 데이터의 중복을 허용하지 않는다. 
 Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍으로 이루어진데이터의 집합, 순서는 유지되지 않고, 키는 중복을 허용하지 않으며 값의 중복을 허용한다.
-- http://hackersstudy.tistory.com/26
-- http://platonic.tistory.com/entry/Java-Collections-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-List-Set-Map-Tree-Stack-Iterator-Enumeration
+> http://hackersstudy.tistory.com/26
+> http://platonic.tistory.com/entry/Java-Collections-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-List-Set-Map-Tree-Stack-Iterator-Enumeration
 ## 동기화 방법에 대해 설명
 * 블록 synchronized, 메소드 synchronized, volatile, ConcurrentUtils의 Concurrent Collection들
-- https://okky.kr/article/279692
-- http://ooz.co.kr/71
+> https://okky.kr/article/279692
+> http://ooz.co.kr/71
 ## HashMap을 사용할 때 주의점은 무엇인가?
 * 속도를 위해 동기화 지원안함. synchronizedMap 이나 ConcurrentHashMap 사용.
 ## 프로세스와 스레드에 대해서 설명 (중복)
@@ -257,17 +262,17 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 ## 오버로딩과 오버라이딩에 대해서 설명 (중복)
 ## 리플렉션에 대해 설명
 * 구체적인 클래스 타입을 알지 못해도, 컴파일된 바이트 코드를 통해 역으로 클래스 정보를 알아내어 클래스를 사용할 수 있는 기법.
-- http://hiddenviewer.tistory.com/114
-- http://hiddenviewer.tistory.com/115
+> http://hiddenviewer.tistory.com/114
+> http://hiddenviewer.tistory.com/115
 ## Parcelable 에 대해서 설명
 * Parcelable이나 Serializable 인터페이스를 구현한 객체는 intent에 putExtra()로 객체를 넘길수 있다.
 * serialization 은 reflection 방법을 사용하여 serialization 을 하는데, parcelable 은프로그래머가 직접 바로 setting 을 해주기 때문에 빠르다.
-- http://isntyet.tistory.com/113
-- http://developer88.tistory.com/64
+> http://isntyet.tistory.com/113
+> http://developer88.tistory.com/64
 ## Strict Mode 에 대해서 설명
 * 메인 스레드에서 디스크 접근, 네트워크 접근등의 비효율적인 작업을 하려는 것을 감지하여사용자에게 알려줌.
-- http://noota.tistory.com/entry/StrictMode-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC
-- http://www.kmshack.kr/2013/04/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94-1-%EC%A6%89%EA%B0%81%EC%A0%81%EC%9D%B8-%EB%B0%98%EC%9D%91%EC%9D%84-%EC%9C%84%ED%95%9C-strictmode/
+> http://noota.tistory.com/entry/StrictMode-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC
+> http://www.kmshack.kr/2013/04/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94-1-%EC%A6%89%EA%B0%81%EC%A0%81%EC%9D%B8-%EB%B0%98%EC%9D%91%EC%9D%84-%EC%9C%84%ED%95%9C-strictmode/
 ## 일반 뷰와 Surface View 의 차이
     * 
 ## Handler, Looper 에 대해서 설명(중복)
@@ -278,17 +283,17 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 * <예방>
     - 시간 소모가 많은 작업은 스레드를 통해 처리하라.
     - onProgressUpdate()를 통해 사용자에게 프로그레스바 등을 이용해 작업의 진행 과정을 안내해기다리도록 한다.
-- http://itmining.tistory.com/3
+> http://itmining.tistory.com/3
 
 ## 백키로 앱을 종료했을 때 프로세스는 종료되나요, 되지 않나요?
 * 종료 됨.
 ## 종료되면 왜 종료되나요? 종료되지 않으면 왜 종료되지 않나요?
 * Back키는 사용자의 종료 의도가 있는 직접적인 행동이므로 Activity가 onPause -> onStop ->onDestroy 과정이 정상적으로 동작된다.
 * 작업을 종료하고 싶지 않다면 Service로 작업을 돌려야한다.
-- https://m.blog.naver.com/PostView.nhn?blogId=highkrs&logNo=220488213481proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+> https://m.blog.naver.com/PostView.nhn?blogId=highkrs&logNo=220488213481proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 ## Zygote 에 대해서
 * Zygote 프로세스는 애플리케이션이 실행되기 전에 실행된 **가상 머신의 코드 및 메모리 정보를 공유**함으로써 애플리케이션이 실행되는 시간을 단축, 여기에 더해 안드로이드 프레임워크에서 동작하는 **애플리케이션이 사용할 클래스와 자원을 미리 메모리에 로딩**해 두고 이러한 자원에 대한 연결 정보를 구성한다. 새로 실행되는 안드로이드 애플리케이션은 필요한 자원들에 대한 연결정보를 매번 새롭게 구성하지 않고 그대로 사용하기 때문에 빠르게 실행된다.
-- http://dev-ahn.tistory.com/87
+> http://dev-ahn.tistory.com/87
 
 # N사 (2)
 https://opentutorials.org/module/2870/16969
@@ -315,8 +320,8 @@ https://opentutorials.org/module/2870/16969
         this.notifyAll();
     }
 ```
-- http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
-- http://kiwi99.tistory.com/21
+> http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
+> http://kiwi99.tistory.com/21
 ## quicksort 손코딩
 ```java
     int partition(int arr[], int left, int right) {
@@ -354,8 +359,8 @@ https://opentutorials.org/module/2870/16969
 * Floyd's Cycle-Finding Algorithm
 * 러너 기법이라고도하며, 속도가 다른 2개의 임시 Node를 가지고 list traversal하면Circular일 경우 빠른 Node가 느린 Node를 따라잡도록 만드는 방법.
 * 속도 O(n) 공간 O(1)
-- http://egloos.zum.com/minjang/v/1687021
-- http://egloos.zum.com/lefoot/v/5226985
+> http://egloos.zum.com/minjang/v/1687021
+> http://egloos.zum.com/lefoot/v/5226985
 ## 즐겨쓰는 디자인패턴과 이유 (중복)
 ## GC 과정을 설명해주세요
 * 객체가 생성되어 Young 영역에 위치(여기서 발생한 GC는 Minor GC)하고 Young 영역에서 살아남은 객체는 Old 영역으로 이동.(Major GC)
@@ -364,16 +369,16 @@ https://opentutorials.org/module/2870/16969
     하나의 Survivor 영역이 가득 차게 되면 그 중에서 살아남은 객체를 다른 Survivor 영역으로 이동하고 가득 찼던 Survivor 영역은 비움.
     이 과정을 반복하다가 계속해서 살아남아 있는 객체는 Old 영역으로 이동.
 * Old 영역의 알고리즘은 Serial GC, Parallel GC, Parallel Old GC, CMS GC, G1 GC 등이 있음.
-- http://d2.naver.com/helloworld/1329
+> http://d2.naver.com/helloworld/1329
 
 ## Dalvik 에서 Art 로 바뀌면서 GC 알고리즘이 변경되었는데 어떻게 변경되었나요?
 * mark sweep 단계를 병렬 프로세싱, short-lived 객체 정리를 위해서 신규 Collector 사용, 비트맵 같은 큰 primitive를 분리된 pool에 유지.
-- https://willowtreeapps.com/ideas/the-android-runtime-the-butter-weve-all-been-waiting-for
+> https://willowtreeapps.com/ideas/the-android-runtime-the-butter-weve-all-been-waiting-for
 
 ## HashTable 을 구현한다면 어떻게 구현하실래요?
 * key, value, hash function, add, remove, 충돌처리방식, resizing
-- http://bcho.tistory.com/1072
-- http://hyeonstorage.tistory.com/265
+> http://bcho.tistory.com/1072
+> http://hyeonstorage.tistory.com/265
 ## Hash 를 쓰는 이유는 무엇인가요?
 * access time이 상수시간(검색이 빠름), 삽입/삭제 쉬움
 ## 아시는 Sort 알고리즘 모두 설명해주세요
@@ -385,23 +390,23 @@ https://opentutorials.org/module/2870/16969
 * Radix : 정수 자리수의 숫자를 기준으로 큐에 넣어서 순서대로 꺼내는 방식으로 정렬을 기준이되는 자리수를 바꿔가면서 정렬을 하는 알고리즘. O(kn)
 * Merge : 원소 개수가 1 또는 0이 될 때까지 두 부분으로 자른 뒤 앞의원소부터 크기를 비교해병합해 나가며 정렬하는 알고리즘. O(nlogn). 일반적으로 퀵정렬보다 느리고 메모리도 필요하지만,stable하다.
 * Heap : 원소들을 전부 Heap(부모의 값이 항상 최소 or 최대 값인 완전 이진 트리)에 삽입 후,루트를 출력하고 힙에서 제거하는 동작을 반복. 항상 O(nlogn).
-- https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+> https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 ## JDK 의 Sort 는 어떻게 되어있나요?
 * JDK 1.8 Arrays.sort() 에서는 내부적으로 Dual-Pivot QuickSort 을 사용
-- http://iloveulhj.github.io/posts/java/java-collection-sort.html
+> http://iloveulhj.github.io/posts/java/java-collection-sort.html
 ## Merge Sort 와 Quick Sort 의 장단점 및 시간복잡도, 공간복잡도를 알려주세요
 * merge는 stable but 추가 메모리 사용. quick은 pivot을 어떻게 잡느냐에 따라 더 빠를 수 있고, 최악 O(n2). 동일하게 분할정복을 사용하지만 퀵정렬은 분할과 동시에 pivot을 기준으로 정렬하기 때문에 분할이 끝난시점에 정렬이 끝나 있다. 분할한 공간을 참조할 때 cpu 캐시의 히트율이 높아 일반적으로 Merge보다 빠름.
-- https://dodo4513.github.io/2017/04/09/sort_2/
+> https://dodo4513.github.io/2017/04/09/sort_2/
 ## HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 ## 자신이 생각하는 OOP 란 무엇인가?
 * 객체지향 프로그래밍 이란 캡슐화, 상속, 다형성 을 이용하여 코드 재사용을 증가시키고,유지보수를 감소시키는 장점을 얻기 위해서 객체들을 연결 시켜 프로그래밍 하는 것 입니다.
 * Class를 구성하여 객체(Instance)를 생성하는 것을 기본으로 프로그램 로직을 실행하도록 지향하는프로그래밍.
-- http://vandbt.tistory.com/10
+> http://vandbt.tistory.com/10
 ## 자바의 메모리 구조에 대해서 설명해주세요
 * Method Area, Heap, Stack, PC Register,  Native Method Stack
-- https://joesimong.blogspot.kr/2014/04/java.html
-- http://gbsb.tistory.com/4
-- http://re-build.tistory.com/2
+> https://joesimong.blogspot.kr/2014/04/java.html
+> http://gbsb.tistory.com/4
+> http://re-build.tistory.com/2
 ## 프로세스 및 스레드에 대해서 설명해주세요 (중복)
 ## Singleton 패턴을 멀티스레드 환경에서 적용하는 3가지 방법에 대해서 설명해 주세요
 * synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Double check synchronization을 사용하고, Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
@@ -414,7 +419,7 @@ https://opentutorials.org/module/2870/16969
         return InstanceHolder.instance;
     }
 ```
-- https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
+> https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
 * interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
 ```java
 public class SampleModule {
@@ -426,63 +431,63 @@ public class SampleModule {
     }
 }
 ```
-- http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
-- (고려해볼 사항) https://medium.com/@LIP/singleton%EA%B3%BC-%EC%8A%B5%EA%B4%80%EC%A0%81-%EB%8A%A6%EC%9D%80-%EC%B4%88%EA%B8%B0%ED%99%94-ca94771b398f
+> http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
+> (고려해볼 사항) https://medium.com/@LIP/singleton%EA%B3%BC-%EC%8A%B5%EA%B4%80%EC%A0%81-%EB%8A%A6%EC%9D%80-%EC%B4%88%EA%B8%B0%ED%99%94-ca94771b398f
 
 ## 데드락 발생 조건에 대해서 설명해주세요
 * 한 리소스에 여러 프로세스 중 한 프로세스가 리소스를 점유하고 있으면서 다른 프로세스가 가지고 있는 리소스를 기다리고, 그 리소스를 강제로 빼앗을 수 없으며, 이러한 자원 대기가 순환하고 있을때.
 ## 데드락 회피 방법 및 대응 방법에 대해서 설명해주세요
 * 발생조건을 하나이상 제거, 교착 상태를 일으킨 프로세스를 종료하거나, 할당된 자원을 해제
-- http://includestdio.tistory.com/12
+> http://includestdio.tistory.com/12
 ## Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
 * 리소스 소비, 복잡성, 데이터 불일치, 데드락, 실행순서 예측 불가
-- http://fsd-jinss.tistory.com/82
-- http://jangsalt.tistory.com/entry/Java-Multi-Thread
-- http://blog.eomdev.com/java/2016/04/06/Multi-Thread.html (읽어볼것)
+> http://fsd-jinss.tistory.com/82
+> http://jangsalt.tistory.com/entry/Java-Multi-Thread
+> http://blog.eomdev.com/java/2016/04/06/Multi-Thread.html (읽어볼것)
 ## interface 와 abstract 의 차이 (중복)
 ## 오버로딩과 오버라이딩의 차이 (중복)
 ## 오버로딩이 제네릭에서 쓰일 때는 어떻게 사용되나요?
 * 제네릭을 쓴다는 건 여러 변수타입에 대한 동일한 동작을 정의하겠다는 이야기인데 오버로딩을 쓴다는 것은 반대되는 행위로 보인다.
 * 대신 제네릭을 쓰지만 매개변수의 갯수가 다른 오버로딩을 사용하는 것은 의미가 있을 것 같다.
-- https://m.blog.naver.com/PostView.nhn?blogId=spdlqjdudghl&logNo=220861890940&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
-- http://aroundck.tistory.com/3161
+> https://m.blog.naver.com/PostView.nhn?blogId=spdlqjdudghl&logNo=220861890940&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+> http://aroundck.tistory.com/3161
 ## 컴파일 타임 오버라이딩 및 런타임 오버라이딩에 대해 설명해주세요
 * 오버라이딩은 기본적으로 런타임 시간에 바인딩된다.
 * 그러나 hiding이라고 부르는 static method 오버라이딩은 컴파일 타임에 결정된다.(JVM은 static method의 실제 객체를 찾는 작업을 하지 않는다.)
-- http://ohgyun.com/242
+> http://ohgyun.com/242
 ## Java IPC?
 * Linux에서 제공하는 소켓, Pipe 등
 * Android 바인더
-- http://d2.naver.com/helloworld/47656
-- https://junyongs.wordpress.com/2014/01/19/process-%EA%B0%84-%ED%86%B5%EC%8B%A0-%EB%B0%A9%EB%B2%95-inter-process-communication-ipc/
+> http://d2.naver.com/helloworld/47656
+> https://junyongs.wordpress.com/2014/01/19/process-%EA%B0%84-%ED%86%B5%EC%8B%A0-%EB%B0%A9%EB%B2%95-inter-process-communication-ipc/
 ## Java concurrent package 에 대해서 설명해주세요
 ## 어노테이션에 대해서 설명해주세요
-- http://www.nextree.co.kr/p5864/
+> http://www.nextree.co.kr/p5864/
 ## Android 시스템 구조
-- http://myembedded.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%A1%B0
+> http://myembedded.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%A1%B0
 ## Android APK 구조
-- https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
+> https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/
 ## 액티비티나 커스텀뷰로 할 수 있는데 프래그먼트를 쓰는 이유는?
 * 하나의 액티비티에서 여러 view들의 전환을 쉽게 하고 각 view들의 자원을 공유할 수 있다.
 ## Handler / Thread / Looper (중복)
 ## 백그라운드로 UI 를 업데이트하는 방법을 모두 알려주세요 (중복)
 * Thread로 작업 후 runOnUIThread, View클래스 post메소드, Handler / AsyncTask
-- http://openeg.co.kr/m/247
+> http://openeg.co.kr/m/247
 ## 인텐트와 인텐트 필터의 개념을 알려주세요
 * Intent는 일종의 메시지 객체입니다. 이것을 사용해 다른 앱 구성 요소로부터 작업을 요청할 수 있습니다. Activity 실행, Service 실행, Broadcast 전달.
 * 명시적 인텐트 / 암시적 인텐트
 * 인텐트 필터는 특정 인텐트를 받을지 말지를 정의하는 역할을 수행
-- https://kairo96.gitbooks.io/android/content/ch2.8.html
+> https://kairo96.gitbooks.io/android/content/ch2.8.html
 ## 이미지 안드로이드 라이브러리를 무엇을 사용해보았나요?
 * Picasso, Glide
 ## 해당 라이브러리를 사용하는 이유는 무엇인가요?
 * 이미지 로드 및 변환이 편하고 cache 신경쓰지 않아도됨.
 * Glide는 gif를 지원.
-- http://gun0912.tistory.com/19
+> http://gun0912.tistory.com/19
 ## RxJava 란 무엇인가요
 * 끊임없이 요청/변경되는 데이터에 반응하기 위해 나온 Reactive Programming 은 데이터를 처리함에 있어서 비동기적으로 데이터를 처리할 때 효율적으로 할 수 있도록 나온 방법.
-- https://www.gitbook.com/book/zerobrain/what-is-rxjava-in-korean/details
-- https://medium.com/@LIP/rxjava-29cfb3ceb4ca
+> https://www.gitbook.com/book/zerobrain/what-is-rxjava-in-korean/details
+> https://medium.com/@LIP/rxjava-29cfb3ceb4ca
 ## 안드로이드에서 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 적어주세요
 ## 벡터 이미지 장점 및 사용 방법
 ## onPause / onStop 의 차이점
@@ -501,7 +506,7 @@ public class SampleModule {
 - 레트로핏, 글라이드, 피카소, Fresco, Dagger, RxJava, RxAndroid, butterKnife, sqlbrite&delight, greendao, 슈가레코드
 - JUnit, mockito, ATSL, stetho, leakcanary
 - Android 아키텍트 패턴 (MVP, MVVM 등)
-    * https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+> https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
 - Android UnitTest
 - TDD
 - GCM, FCM, Firebase
@@ -513,7 +518,7 @@ public class SampleModule {
 ## Dagger
 * Dependency Injection 라이브러리 : 'new'를 사용해 모듈내에서 다른 모듈을 초기화하지 않고, 객체 생성은 다른 곳에서 하고 생성된 객체를 참조만 하는 방법. (쉽게 생각해서 Sigleton 집합?)
 
-- http://imcreator.tistory.com/106
+> http://imcreator.tistory.com/106
 
 # SK TechX
 1.	Java Collection Framework 에 대해서 설명하라
