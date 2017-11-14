@@ -1,7 +1,5 @@
 # N사 전화
 https://opentutorials.org/module/2870/16572
-##	이직 사유
-
 ## 정렬 알고리즘을 알고 있는대로 말해주세요
 * Insertion, Selection, Bubble, Merge, Quick, Radix
 ## 퀵소트를 말했는데, 해당 정렬 알고리즘을 상세히 설명해주세요.
@@ -233,7 +231,7 @@ implments | extends
 ## Set, Map, List 에 대해 설명
 | 인터페이스 | 구현 클래스 | 특징 | 
 | --------- | ---------- | ---- |
-List | LinkedList / Stack / Vector /ArrayList | 순서가 있는 데이터의 집합, 데이터의 중복을허용한다.
+List | LinkedList / Stack / Vector /ArrayList | 순서가 있는 데이터의 집합, 데이터의 중복을 허용한다.
 Set | HashSet / TreeSet | 순서가 없는 데이터의 집합, 데이터의 중복을 허용하지 않는다. 
 Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍으로 이루어진데이터의 집합, 순서는 유지되지 않고, 키는 중복을 허용하지 않으며 값의 중복을 허용한다.
 - http://hackersstudy.tistory.com/26
@@ -244,6 +242,7 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 - http://ooz.co.kr/71
 ## HashMap을 사용할 때 주의점은 무엇인가?
 * 속도를 위해 동기화 지원안함. synchronizedMap 이나 ConcurrentHashMap 사용.
+> http://ooz.co.kr/71
 ## 프로세스와 스레드에 대해서 설명 (중복)
 ## GC 과정에 대해서 설명(아래쪽 참고)
 ## 접근지정자에 대해서 설명
@@ -262,14 +261,19 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 ## Parcelable 에 대해서 설명
 * Parcelable이나 Serializable 인터페이스를 구현한 객체는 intent에 putExtra()로 객체를 넘길수 있다.
 * serialization 은 reflection 방법을 사용하여 serialization 을 하는데, parcelable 은프로그래머가 직접 바로 setting 을 해주기 때문에 빠르다.
+* Kotlin Android Extensions에 Parcelable을 자동으로 생성해주는 plugin도 제공한다.
 - http://isntyet.tistory.com/113
 - http://developer88.tistory.com/64
 ## Strict Mode 에 대해서 설명
-* 메인 스레드에서 디스크 접근, 네트워크 접근등의 비효율적인 작업을 하려는 것을 감지하여사용자에게 알려줌.
+* 메인 스레드에서 디스크 접근, 네트워크 접근등의 비효율적인 작업을 감지하여 사용자에게 알려줌.
 - http://noota.tistory.com/entry/StrictMode-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC
 - http://www.kmshack.kr/2013/04/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94-1-%EC%A6%89%EA%B0%81%EC%A0%81%EC%9D%B8-%EB%B0%98%EC%9D%91%EC%9D%84-%EC%9C%84%ED%95%9C-strictmode/
 ## 일반 뷰와 Surface View 의 차이
-    * 
+* 일반 View는 onDraw 메소드를 시스템에서 자동으로 호출해줌으로써 화면을 그린다. 그래서 화면에 늦게 그려질 수도 있다.
+SurfaceView는 그리기를 시스템에 맡기는 것이 아니라 스레드를 이용해 강제로 화면에 그림으로써 원하는 시점에 바로 화면에 그릴 수 있다.
+그래서 SurfaceView는 애니메이션이나 동영상과 같이 연산처리가 많이 필요한 뷰를 위해 사용된다.
+SurfaceView는 더블 버퍼링 기법을 이용하여 SurfaceHolder가 Surface에 미리 그리고 이 Surface가 SurfaceView에 반영되는 방식이다.
+> http://blog.naver.com/PostView.nhn?blogId=muri1004&logNo=221054311714&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
 ## Handler, Looper 에 대해서 설명(중복)
 ## ANR 에 대해서 설명 피하려면 어떻게?
 * Main Thread(UI Thread)가 일정 시간 어떤 Task에 잡혀 있어 응답이 없는 상태를 경고.
@@ -287,22 +291,21 @@ Map | HashMap / TreeMap / HashTable / Properties | 키(key)와 값(value)의 쌍
 * 작업을 종료하고 싶지 않다면 Service로 작업을 돌려야한다.
 - https://m.blog.naver.com/PostView.nhn?blogId=highkrs&logNo=220488213481proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 ## Zygote 에 대해서
-* Zygote 프로세스는 애플리케이션이 실행되기 전에 실행된 **가상 머신의 코드 및 메모리 정보를 공유**함으로써 애플리케이션이 실행되는 시간을 단축, 여기에 더해 안드로이드 프레임워크에서 동작하는 **애플리케이션이 사용할 클래스와 자원을 미리 메모리에 로딩**해 두고 이러한 자원에 대한 연결 정보를 구성한다. 새로 실행되는 안드로이드 애플리케이션은 필요한 자원들에 대한 연결정보를 매번 새롭게 구성하지 않고 그대로 사용하기 때문에 빠르게 실행된다.
+* Zygote 프로세스는 애플리케이션이 실행되기 전에 실행된 **가상 머신의 코드 및 메모리 정보를 공유**함으로써 애플리케이션이 실행되는 시간을 단축, 여기에 더해 안드로이드 프레임워크에서 동작하는 **애플리케이션이 사용할 클래스와 자원을 미리 메모리에 로딩**(preload resources/classes)해 두고 이러한 자원에 대한 연결 정보를 구성한다. 새로 실행되는 안드로이드 애플리케이션은 필요한 자원들에 대한 연결정보를 매번 새롭게 구성하지 않고 그대로 사용(fork())하기 때문에 빠르게 실행된다.
 - http://dev-ahn.tistory.com/87
 
 # N사 (2)
 https://opentutorials.org/module/2870/16969
 ## 자신의 장점과 단점
-* 
 ## 요즘 기술 트렌드 학습하는 법
-* 온오프믹스 세미나(ionic2, 진유림님), 밋업 모임(영어회화, nodejs), Facebook/google group(gdg, angular), 고수들 블로그나 github(아웃사이더, JakeWharton), 처음엔 고수들 블로그를 즐겨찾기해놓고 수시로 들어가서 봤는데 요즘은 topic중심으로 그때그때 찾아본다.
+* 온오프믹스 세미나(ionic2, 진유림님), 밋업 모임(영어회화, nodejs), devFest등의 세미나, Facebook/google group(gdg, angular), 고수들 블로그나 github(아웃사이더, JakeWharton), 처음엔 고수들 블로그를 즐겨찾기해놓고 수시로 들어가서 봤는데 요즘은 topic중심으로 그때그때 찾아본다.
 ## 부서나 업무 롤의 분쟁이 일어났을 때 해결한 경험
 * 분쟁이 일어났다는 이야기는 R&R이 불분명한 경우가 많다. R&R 관계를 잠시 제쳐두고, 업무자체의 목적과 지금 해결해야되는 사항에 대해서 고민한다. 그리고 서로서로 적절히 업무배분을 한다.
 ## 이직하려는 이유는? (중복)
 ## 이전 직장에서 맡았던 개발과 역할?
 * 안드로이드 Wi-Fi Framework/Library 기능을 담당하면서 모델 출시를 위한 탑재 및 최적화, 이슈해결, 사업자 신규기능 구현, 홈로봇 서비스 제공 안드로이드 어플리케이션 개발, Angularjs를 이용한 IoT 제품 연동 관리 하이브리드 앱.
 ## 배우고 싶은 기술은 어떤 것이 있나요?
-* 서비스 구조 설계(디자인), 어플리케이션 최적화, 대량 Data 처리, RxJava등의 신규 기술 등
+* 서비스 구조 설계(디자인), 어플리케이션 최적화, 대량 Data 처리, RxJava,Kotlin등의 신규 기술 등
 ## wait / notifyall 관련 손코딩
 ```java
     public synchronized methodA() {
@@ -315,8 +318,8 @@ https://opentutorials.org/module/2870/16969
         this.notifyAll();
     }
 ```
-- http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
-- http://kiwi99.tistory.com/21
+> http://everysw.tistory.com/entry/notifyAll-%EA%B3%BC-wait-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
+> http://kiwi99.tistory.com/21
 ## quicksort 손코딩
 ```java
     int partition(int arr[], int left, int right) {
@@ -352,10 +355,10 @@ https://opentutorials.org/module/2870/16969
 
 ## Circular List 와 일반 Linked List 구분하는 법은?
 * Floyd's Cycle-Finding Algorithm
-* 러너 기법이라고도하며, 속도가 다른 2개의 임시 Node를 가지고 list traversal하면Circular일 경우 빠른 Node가 느린 Node를 따라잡도록 만드는 방법.
+* 러너 기법이라고도하며, 속도가 다른 2개의 임시 Node를 가지고 list traversal하면 Circular일 경우 빠른 Node가 느린 Node를 따라잡도록 만드는 방법.
 * 속도 O(n) 공간 O(1)
-- http://egloos.zum.com/minjang/v/1687021
-- http://egloos.zum.com/lefoot/v/5226985
+> http://egloos.zum.com/minjang/v/1687021
+> http://egloos.zum.com/lefoot/v/5226985
 ## 즐겨쓰는 디자인패턴과 이유 (중복)
 ## GC 과정을 설명해주세요
 * 객체가 생성되어 Young 영역에 위치(여기서 발생한 GC는 Minor GC)하고 Young 영역에서 살아남은 객체는 Old 영역으로 이동.(Major GC)
