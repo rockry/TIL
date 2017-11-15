@@ -66,6 +66,7 @@ https://opentutorials.org/module/2870/16572
 ## 언급하신 Singleton 은 논란이 있는 부분이 있습니다. 어떤 부분인지 아시나요?
 * Singleton은 멀티스레드 환경에서 동기화 문제가 있습니다. synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
+public class YourObject {
     private static class Holder {
         private static final YourObject instance = new YourObject();
     }
@@ -73,6 +74,7 @@ https://opentutorials.org/module/2870/16572
     public static YourObject getInstance() {
         return Holder.instance;
     }
+}
 ```
 * enum을 이용한 singleton 구현도 가능 합니다.
 ```java
@@ -406,7 +408,7 @@ https://opentutorials.org/module/2870/16969
 > https://willowtreeapps.com/ideas/the-android-runtime-the-butter-weve-all-been-waiting-for
 
 ## HashTable 을 구현한다면 어떻게 구현하실래요?
-* key, value, hash function, add, remove, 충돌처리방식, resizing
+* key, value, hash function, add, remove, 충돌처리방식(Separate Chaning/Open Addressing), resizing
 > http://bcho.tistory.com/1072
 
 > http://hyeonstorage.tistory.com/265
@@ -417,22 +419,27 @@ https://opentutorials.org/module/2870/16969
 * Bubble, Selection, Insertion, Quick, Radix, Merge, Heap
 * Bubble : 0~n까지 두수를 비교하여 위치를 교환하는 방식으로 가장 큰 수를 고른 후, n번 반복하여 정렬하는 방식. O(n2)
 * Selection : 0~n까지 탐색하여 가장 큰 수(또는 작은수)를 n번 선택하는 방식.  O(n2)
-* Insertion : 정렬된 배열을 만들어가며, 원소를 하나씩 추가하여 적절한 위치에 삽입하는 방식. (n2). 이미 정렬되어있을 경우 최고!
+* Insertion : 정렬된 배열을 만들어가며, 원소를 하나씩 추가하여 적절한 위치에 삽입하는 방식. O(n2). 이미 정렬되어있을 경우 최고! O(n)
 * Quick : 연속적인 분할에 의한 정렬. pivot을 중심으로 pivot보다 작은수와 큰수를 나누어가며logn번 반복하는 방식. O(nlogn). 피벗선택을 잘못할 경우 O(n2) 됨.
 * Radix : 정수 자리수의 숫자를 기준으로 큐에 넣어서 순서대로 꺼내는 방식으로 정렬을 기준이되는 자리수를 바꿔가면서 정렬을 하는 알고리즘. O(kn)
-* Merge : 원소 개수가 1 또는 0이 될 때까지 두 부분으로 자른 뒤 앞의원소부터 크기를 비교해병합해 나가며 정렬하는 알고리즘. O(nlogn). 일반적으로 퀵정렬보다 느리고 메모리도 필요하지만,stable하다.
+* Merge : 원소 개수가 1 또는 0이 될 때까지 두 부분으로 자른 뒤 앞의원소부터 크기를 비교해 병합해 나가며 정렬하는 알고리즘. O(nlogn). 일반적으로 퀵정렬보다 느리고 메모리도 필요하지만,stable하다.
 * Heap : 원소들을 전부 Heap(부모의 값이 항상 최소 or 최대 값인 완전 이진 트리)에 삽입 후,루트를 출력하고 힙에서 제거하는 동작을 반복. 항상 O(nlogn).
 > https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 ## JDK 의 Sort 는 어떻게 되어있나요?
-* JDK 1.8 Arrays.sort() 에서는 내부적으로 Dual-Pivot QuickSort 을 사용
+* JDK 1.8 Arrays.sort() 에서는 내부적으로 Dual-Pivot QuickSort 을 사용.
 > http://iloveulhj.github.io/posts/java/java-collection-sort.html
+* Collections 클래스의 정렬은 속도가 비교적 빠르고 안정성이 보장되는 Merge Sort를 사용.
+> http://movefast.tistory.com/80
 ## Merge Sort 와 Quick Sort 의 장단점 및 시간복잡도, 공간복잡도를 알려주세요
-* merge는 stable but 추가 메모리 사용. quick은 pivot을 어떻게 잡느냐에 따라 더 빠를 수 있고, 최악 O(n2). 동일하게 분할정복을 사용하지만 퀵정렬은 분할과 동시에 pivot을 기준으로 정렬하기 때문에 분할이 끝난시점에 정렬이 끝나 있다. 분할한 공간을 참조할 때 cpu 캐시의 히트율이 높아 일반적으로 Merge보다 빠름.
+* merge는 stable but 추가 메모리 사용. quick은 pivot을 어떻게 잡느냐에 따라 더 빠를 수 있고, 최악 O(n2). 동일하게 분할정복을 사용하지만 퀵정렬은 분할과 동시에 pivot을 기준으로 정렬하기 때문에 분할이 끝난시점에 정렬이 끝나있다. 분할한 공간을 참조할 때 cpu 캐시의 히트율이 높아 일반적으로 Merge보다 빠름.
+공간복잡도 : merge=N, quick=1
 > https://dodo4513.github.io/2017/04/09/sort_2/
+
+> http://hsp1116.tistory.com/33
 ## HashMap 사용 시 hashCode 및 equals 오버라이딩 시의 주의점 및 규약
 ## 자신이 생각하는 OOP 란 무엇인가?
-* 객체지향 프로그래밍 이란 캡슐화, 상속, 다형성 을 이용하여 코드 재사용을 증가시키고,유지보수를 감소시키는 장점을 얻기 위해서 객체들을 연결 시켜 프로그래밍 하는 것 입니다.
-* Class를 구성하여 객체(Instance)를 생성하는 것을 기본으로 프로그램 로직을 실행하도록 지향하는프로그래밍.
+* 객체지향 프로그래밍 이란 캡슐화, 상속, 다형성 을 이용하여 **코드 재사용을 증가**시키고,**유지보수를 감소**시키는 장점을 얻기 위해서 **객체들을 연결시켜 프로그래밍 하는 것** 입니다.
+* Class를 구성하여 객체(Instance)를 생성하는 것을 기본으로 프로그램 로직을 실행하도록 지향하는 프로그래밍.
 > http://vandbt.tistory.com/10
 ## 자바의 메모리 구조에 대해서 설명해주세요
 * Method Area, Heap, Stack, PC Register,  Native Method Stack
@@ -446,27 +453,42 @@ https://opentutorials.org/module/2870/16969
 ## Singleton 패턴을 멀티스레드 환경에서 적용하는 3가지 방법에 대해서 설명해 주세요
 * synchronized를 이용하면 해결되지만 비용이 비싼 측면이 있어 Double check synchronization을 사용하고, Holder 클래스를 통한 지연초기화 방법을 사용할 수 있습니다.
 ```java
-    private static class InstanceHolder {
+public class YourObject {
+    private static class Holder {
         private static final YourObject instance = new YourObject();
     }
 
     public static YourObject getInstance() {
-        return InstanceHolder.instance;
+        return Holder.instance;
     }
+}
+```
+* enum을 이용한 singleton 구현도 가능 합니다.
+```java
+public enum Singleton {
+    INSTANCE;
+    public void myMethod(){  
+    }
+}
+
+Singleton.INSTANCE.myMethod();
 ```
 > https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
-* interface 로컬변수는 무조건 public static final 이고, 생략 가능하기 때문에 아래와 같이 활용 가능하다.
+
+* interface 로컬변수는 무조건 public static final 이고 생략 가능하기 때문에, interface Holder를 이용해 아래와 같이 활용 가능하다.
 ```java
-public class SampleModule {
+public class YourObject {
     interface Holder {
-        SampleModule instance = new SampleModule();
+        YourObject instance = new YourObject();
     }
-    static public SampleModule getInstance() {
+    public static YourObject getInstance() {
         return Holder.instance;
     }
 }
 ```
 > http://gangzzang.tistory.com/entry/Java-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4interface
+
+> https://blog.seotory.com/post/2016/03/java-singleton-pattern
 
 > (고려해볼 사항) https://medium.com/@LIP/singleton%EA%B3%BC-%EC%8A%B5%EA%B4%80%EC%A0%81-%EB%8A%A6%EC%9D%80-%EC%B4%88%EA%B8%B0%ED%99%94-ca94771b398f
 
@@ -476,12 +498,15 @@ public class SampleModule {
 * 발생조건을 하나이상 제거, 교착 상태를 일으킨 프로세스를 종료하거나, 할당된 자원을 해제
 > http://includestdio.tistory.com/12
 ## Java 멀티스레드 구현을 위해 고려할 수 있는 것을 모두 알려주세요
-* 리소스 소비, 복잡성, 데이터 불일치, 데드락, 실행순서 예측 불가
+* 리소스 소비(스택 생성 및 문맥교환 오버헤드), 복잡성 증가, 데이터 불일치, 실행순서 예측 불가, 데드락
 > http://fsd-jinss.tistory.com/82
 
 > http://jangsalt.tistory.com/entry/Java-Multi-Thread
 
 > http://blog.eomdev.com/java/2016/04/06/Multi-Thread.html (읽어볼것)
+
+## Mutex와 Semaphore
+> http://ninako21.tistory.com/500
 
 ## interface 와 abstract 의 차이 (중복)
 ## 오버로딩과 오버라이딩의 차이 (중복)
@@ -505,6 +530,8 @@ public class SampleModule {
 
 ## Java concurrent package 에 대해서 설명해주세요
 ## 어노테이션에 대해서 설명해주세요
+어노테이션은 소스 코드에 메타데이터를 삽입하는 것이기 때문에 잘 이용하면 구독성 뿐 아니라 체계적인 소스 코드를 구성하는데 도움이 됩니다. 
+쉽게 말해서 "이 속성을 어떤 용도로 사용할까, 이 클래스에게 어떤 역할을 줄까?"를 결정해서 붙여준다고 볼 수 있습니다.
 > http://www.nextree.co.kr/p5864/
 ## Android 시스템 구조
 > http://myembedded.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%A1%B0
@@ -543,6 +570,8 @@ public class SampleModule {
 ## Dalvik 과 Art 의 차이에 대해서 알려주세요
 ## NDK 의 개념
 ## Weak Reference / Soft Reference / Strong Reference 자세히 설명 및 GC 과정
+* Soft Reference = 메모리가 부족할 때 GC 대상이 됨.
+* Weak Refernece = GC 수행할 때마다 GC 대상이 됨.
 ## ListView 와 RecyclerView 차이점 및 ViewHolder 를 ListView 에서 구현할 경- RecyclerView 와 성능차이가 있는지 여부
 ## HTTP 통신 구현 경험
 
