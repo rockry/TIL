@@ -1,4 +1,4 @@
-# N사 전화
+# R사 전화
 https://opentutorials.org/module/2870/16572
 ## 정렬 알고리즘을 알고 있는대로 말해주세요
 * Insertion, Selection, Bubble, Merge, Quick, Radix
@@ -202,7 +202,7 @@ https://opentutorials.org/module/2870/16724
 ## 전반적인 View, Thread, 성능 개선에 대해 중점적인 추가 질문
 *
     
-# N사 (1)
+# R사 (1)
 https://opentutorials.org/module/2870/16875
 ## Activity lifecycle -> onStart onResume 차이
 * onCreate -> onStart -> onResume -> onPuase -> onStop -> onDestroy
@@ -324,7 +324,7 @@ SurfaceView는 더블 버퍼링 기법을 이용하여 SurfaceHolder가 Surface�
 * Zygote 프로세스는 애플리케이션이 실행되기 전에 실행된 **가상 머신의 코드 및 메모리 정보를 공유**함으로써 애플리케이션이 실행되는 시간을 단축, 여기에 더해 안드로이드 프레임워크에서 동작하는 **애플리케이션이 사용할 클래스와 자원을 미리 메모리에 로딩**(preload resources/classes)해 두고 이러한 자원에 대한 연결 정보를 구성한다. 새로 실행되는 안드로이드 애플리케이션은 필요한 자원들에 대한 연결정보를 매번 새롭게 구성하지 않고 그대로 사용(fork())하기 때문에 빠르게 실행된다.
 > http://dev-ahn.tistory.com/87
 
-# N사 (2)
+# R사 (2)
 https://opentutorials.org/module/2870/16969
 ## 자신의 장점과 단점
 ## 요즘 기술 트렌드 학습하는 법
@@ -575,6 +575,25 @@ public class YourObject {
 ## ListView 와 RecyclerView 차이점 및 ViewHolder 를 ListView 에서 구현할 경- RecyclerView 와 성능차이가 있는지 여부
 ## HTTP 통신 구현 경험
 
+# R사 (3)
+## UI 디버깅도구를 써본 것이 있나요?
+* 안드로이드 기본 제공하는 View표시 터치표시 레이아웃 표시 등.
+> http://kimjihyok.info/2017/05/04/android-debug-tools-%EB%94%94%EB%B2%84%EA%B9%85-%EB%8F%84%EA%B5%AC-%EC%B4%9D%EC%A0%95%EB%A6%AC/
+
+## Strict Mode를 사용해본적 있나요?
+
+## CustomView를 사용해 본 적 있나요?
+
+## MVP와 MVVM의 특징과 차이점
+
+> https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+
+## Android Data Binding
+
+## 객체지향과 함수형언어의 차이점
+
+## 이진검색트리를 구현해 보세요.
+
 ## 그외
 - zip / CountDownLatcher / flatMap
 - 레트로핏, 글라이드, 피카소, Fresco, Dagger, RxJava, RxAndroid, butterKnife, sqlbrite&delight, greendao, 슈가레코드
@@ -594,7 +613,7 @@ public class YourObject {
 
 > http://imcreator.tistory.com/106
 
-# SK TechX
+# X사
 1.	Java Collection Framework 에 대해서 설명하라
 2.	Android View 가 생성되는 Callback 과정에 대해서 설명하라
 3.	Android 생명주기를 설명하라 
