@@ -602,6 +602,7 @@ public class YourObject {
 > 더 공부 할것..
 
 ## 이진검색트리를 구현해 보세요.
+> http://creatordev.tistory.com/76
 
 ## 그외
 - zip / CountDownLatcher / flatMap
