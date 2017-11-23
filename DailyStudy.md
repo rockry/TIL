@@ -1,3 +1,7 @@
+## 2017-11-23
+- MVC-MVP-MVVM
+- tools attribute 사용법 (http://gun0912.tistory.com/73)
+
 ## 2017-11-05
 - git rebase와 fetch
 - fragment간 통신
