@@ -1,25 +1,25 @@
 # Interview 자료들
 
-## AndroidInterview1
-[link](https://github.com/rockry/TIL/AndroidInterview1.md)
+## Android Interview 1
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview1.md)
 
-## AndroidInterview2
-[link](https://github.com/rockry/TIL/AndroidInterview2.md)
+## Android Interview 2
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview2.md)
 
-## AndroidInterview3
-[link](https://github.com/rockry/TIL/AndroidInterview3.md)
+## Android Interview 3
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview3.md)
 
-## AndroidInterview4
-[link](https://github.com/rockry/TIL/AndroidInterview4.md)
+## Android Interview 4
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview4.md)
 
-## AndroidInterview5
-[link](https://github.com/rockry/TIL/AndroidInterview5.md)
+## Android Interview 5
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview5.md)
 
-## AndroidInterview6
-[link](https://github.com/rockry/TIL/AndroidInterview6.md)
+## Android Interview 6
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterview6.md)
 
-## AndroidInterviewPractice1
-[link](https://github.com/rockry/TIL/AndroidInterviewPractice1.md)
+## Android Interview Practice 1
+[link](https://github.com/rockry/TIL/blob/master/Interviews/AndroidInterviewPractice1.md)
 
 ## 알면 도움되는 것들
 - zip / CountDownLatcher / flatMap
