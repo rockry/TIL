@@ -22,7 +22,10 @@
 
 > http://clojure.or.kr/wiki/doku.php?id=lecture:clojure:why_clojure
 
-> 더 공부 할것..
+## 함수형 언어
+> https://medium.com/@jooyunghan/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-fab4e960d263
+
+> https://medium.com/@jooyunghan/%EC%96%B4%EB%96%A4-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4%EB%93%A4%EC%9D%B4-%ED%95%A8%EC%88%98%ED%98%95%EC%9D%B8%EA%B0%80-fec1e941c47f
 
 ## 이진검색트리를 구현해 보세요.
 > http://creatordev.tistory.com/76

@@ -8,7 +8,7 @@
 ![안드로이드 Fragment 생명주기](./images/Fragment_LifeCycle.jpg "LifeCycle of Fragment")
 
 # 서비스 생명주기 
-![서비스생명주기](../images/서비스생명주기.png "서비스생명주기")
+![서비스생명주기](./images/서비스생명주기.png "서비스생명주기")
 
 # enum 의 장점
 간결한 코드로 인해 개발 및 유지보수가 용이하게 합니다. 
