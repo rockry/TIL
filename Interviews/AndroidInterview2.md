@@ -50,7 +50,7 @@ https://opentutorials.org/module/2870/16724
 > http://d2.naver.com/helloworld/831311
 
 ## 안드로이드 맵 자료구조 (ArrayMap 등의 사용법 등)
-* ![Java Collection Framework](./images/JavaCollectionFramework.jpg "Java CollectionFramework")
+* ![Java Collection Framework](../images/JavaCollectionFramework.jpg "Java CollectionFramework")
 > http://hackersstudy.tistory.com/26
 
 > http://programmingsummaries.tistory.com/57

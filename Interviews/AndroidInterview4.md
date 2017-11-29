@@ -57,7 +57,10 @@ https://opentutorials.org/module/2870/16969
     }
 ```
 ## quicksort 알고리즘 과정 그림으로 설명 (화이트보드)
-![퀵소트](images/QuickSort.jpg)
+![퀵소트](../images/QuickSort.jpg)
+> http://www.algolist.net/Algorithms/Sorting/Quicksort 
+
+> https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/ 
 
 ## Circular List 와 일반 Linked List 구분하는 법은?
 * Floyd's Cycle-Finding Algorithm
@@ -246,5 +249,7 @@ public class YourObject {
 ## Weak Reference / Soft Reference / Strong Reference 자세히 설명 및 GC 과정
 * Soft Reference = 메모리가 부족할 때 GC 대상이 됨.
 * Weak Refernece = GC 수행할 때마다 GC 대상이 됨.
+> http://d2.naver.com/helloworld/329631
+
 ## ListView 와 RecyclerView 차이점 및 ViewHolder 를 ListView 에서 구현할 경- RecyclerView 와 성능차이가 있는지 여부
 ## HTTP 통신 구현 경험
