@@ -1,3 +1,6 @@
+## 2017-11-28
+- 함수형 언어
+
 ## 2017-11-23
 - MVC-MVP-MVVM
 - tools attribute 사용법 (http://gun0912.tistory.com/73)
