@@ -379,7 +379,7 @@ Java Object 가 아닌 Native Object 가 거주하는 공간이며 OS 차원에�
 - JIT 관련 수행 코드 
  
 # MVP 패턴 
-MVC 패턴과는 다르게 입력이 View 에서 처린된다. Presenter 는 View의 인스턴스를 갖고 있으며 View 와 1대1 관계이고, 그에 해당하는 Model 의 인스턴스 또한 갖고 있기에 View 와 Model 사이에서 다리와 같은 역할을 한다. View 에서 이벤트가 발생하면 Presenter 에게 전달해주고 Presenter 는 해당 이벤트에 따른 Model 을 조작하고 그 결과를 바인딩을 통해 View 에게 통보하여 View 를 업데이트 시켜준다. MVC 패턴과는 다르게 Presenter 를 통해 Model / View 를 완벽히 분리해 주기 때문에 View 는 Model 을 따로 알고 있지도 앓아도 됨, 단점은 View 와 1:1 관계이기 때문에 View와의 의존성이 매우 강하다.
+MVC 패턴과는 다르게 입력이 View 에서 처리된다. Presenter 는 View의 인스턴스를 갖고 있으며 View 와 1대1 관계이고, 그에 해당하는 Model 의 인스턴스 또한 갖고 있기에 View 와 Model 사이에서 다리와 같은 역할을 한다. View 에서 이벤트가 발생하면 Presenter 에게 전달해주고 Presenter 는 해당 이벤트에 따른 Model 을 조작하고 그 결과를 바인딩을 통해 View 에게 통보하여 View 를 업데이트 시켜준다. MVC 패턴과는 다르게 Presenter 를 통해 Model / View 를 완벽히 분리해 주기 때문에 View 는 Model 을 따로 알고 있지 않아도 됨, 단점은 View 와 1:1 관계이기 때문에 View와의 의존성이 매우 강하다.
 
 # Parcelable vs Serializable
 Serializable 은 Serialize 가 필요한 순간에 알아서 Serialize 해주는 maker interface 이다. 
