@@ -14,4 +14,4 @@ Java -> Kotlin으로 넘어가면서 RecyclerView를 Refactoring 하기로 했�
 
 [Kotlin Android Extensions - 리사이클러의 뷰홀더에서 올바르게 사용하는 방법](https://www.androidhuman.com/lecture/kotlin/2017/11/26/kotlin_android_extensions_on_viewholder/)
 
-[[Kotlin] RecyclerView 롱클릭 드래그로 위치 변경하기](https://yunhookim.tistory.com/18)
+[[Kotlin] RecyclerView 드래그로 위치 변경하기](https://developer88.tistory.com/102)
