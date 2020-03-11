@@ -98,3 +98,5 @@ https://help.github.com/articles/basic-writing-and-formatting-syntax/
 https://help.github.com/articles/organizing-information-with-tables/
 
 https://gist.github.com/ihoneymon/652be052a0727ad59601
+
+https://heropy.blog/2017/09/30/markdown/
